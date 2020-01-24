@@ -1,0 +1,17 @@
+Configure Mariadb, so you get access to connect to dbeaver
+
+** FOR NOW **
+
+cd /etc/my.cnf.d
+vi mariabdb-server-cnf ->
+
+bind-address=0.0.0.0
+_________________________________
+
+
+systemctl restart mysql.service
+systemctl restart mariadb.services
+
+
+after that it sould word. need to add more information. 
+

@@ -1,0 +1,4 @@
+Find out what kind of versions of software you have avalible. 
+
+
+dnf module list postgresql/mysql/mariadb

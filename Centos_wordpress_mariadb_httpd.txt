@@ -1,0 +1,64 @@
+Centos OS with Wordpress (httpd, mariadb,mysql)
+_____________________________________________________________________
+1. System	RHEL 8 / CentOS 8
+2.Software	MariaDB Server 10.3.10, PHP 7.2.11-1, Apache/2.4.35 (Red Hat Enterprise Linux)
+3.Other	Privileged access to your Linux system as root or via the sudo command.
+4.Conventions	# - requires given linux commands to be executed with root privileges either directly as a root user or by use of sudo command
+$ - requires given linux commands to be executed as a regular non-privileged user
+
+______________________________________________________________________
+
+-> Install all prerequisites
+	dnf install php-mysqlnd php-fpm mariadb-server httpd tar curl php-json
+
+-> Open HTTP and optionally HTTPS (port 80 and 443 on your firewall)
+	firewall-cmd --permanent --zone=public --add-service=http
+	firewall-cmd --permanent --zone=public --add-service=https
+	firewall -cmd --reload
+
+-> Start both the Apache webserver and the MariaDB services:
+	systemctl start mariadb
+	systemctl start httpd
+
+-> Enable MariaDB and httpd to start after system reboot:
+	systemctl enable mariadb
+	systemctl enable httpd
+
+-> Secure your MariaDB installation and set root password:
+	mysql_secure_installation
+
+-> Create a new databse "db_name" and give new user "db_user" access to the worldpress database with "db_password"
+(in this example :
+	db=wordress
+	user=admin
+	pw=password
+	____________
+	mysql -u root -p
+	mysql> CREATE DATABASE wordpress;
+	mysql> CREATE USER `admin`@`localhost` IDENTIFIED BY 'password';
+	mysql> GRANT ALL ON wordpress.* TO `admin`@`localhost`;
+	mysql> FLUSH PRIVILEGES;
+	mysql> exit
+
+-> Download and extract WordPress
+	curl https://wordpress.org/latest.tar.gz --output wordpress.tar.gz
+	tar xf wordpress.tar.gz
+(Copy the extracted WordPress directory into the /var/www/html directory)
+	cp -r wordpress /var/www/html
+
+(Lastly in this step, change permissions and change file SELinux security context)
+	chown -R apache:apache /var/www/html/wordpress
+	chcon -t httpd_sys_rw_content_t /var/www/html/wordpress -R
+-> Access WordPress installation wizard and perform the actual WordPress instalation. Navigate your browser to:
+	url/wodpress (http://192.168.1.14/wordpress)
+
+-> (Enter Username, Password, DatabaseHost (localhost if on own pc) from the db -> you entered this info before when creating a db)
+
+
+-> Follow steps to finish initalization of wordpress application. 
+
+______________________________________________________________________
+
+
+
+

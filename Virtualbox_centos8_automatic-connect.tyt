@@ -1,0 +1,21 @@
+Virtual box, Centos 8
+
+
+check connection :
+nmcli /nmcli d
+
+
+To edit the connection :
+
+nmtui  
+
+-> edit connection
+-> choose ethernet connection
+-> With spacebar check "automaticaly connect"
+-> save 
+
+
+systemctl restart network
+sudo shutdown -r now
+
+
