@@ -36,6 +36,57 @@ AUTH METHODS
 
 - Password
 
-- Ident
+- Ident - only supported on TCP connections. It works by obtaining the client's operating system user name, with an optional user name mapping. 
+
+- Peer - same as Ident , but is supported on local connection only. 
+
+!!Postgresql client authentication is defined in the congifuration file named pg_hba.conf By defaout. tor local connections, Postgresql is set to use the perr autheitcaiton method. !!
+
+
+
+** The postgres user is automatically created when you install the PostgreSQL server. This user is the superuser for the PostgreSQL instance. It is equivalent to the MySQL root user.**
+
+
+-> To log in to the PostgreSQL server as the postgres user, first switch to the user and then access the PostgreSQL prompt using the psql utility:
+	sudo su - postgres
+	psql
+	\ - exit psql sheel.
+
+_______________________________________________________________________
+
+-> Creating PostgreSQL Role and Database 
+
+Only superusers and roles with CREATEROLE privilege can create new rols. 
+
+-> connect to the PSQL shell adn create a new user and databse and grant all privileges on the databse
+	sudo -u postgres psql
+	create role denis;
+	create database denisdb;
+	grant all privileges on databse denisdb to denis;
+
+_______________________________________________________________________
+
+-> Enable rebote access to PostgresSQL server
+
+default - 127.0.0.1
+
+-> To enable remote acces 
+	!!sudo vi /var/lib/pgsql/data/postgresql.conf!!
+-> CONNECTIONS AND AUTHENTICATIONS section
+	listen_addresses ='*'
+	sudo systemctl restart postgresql
+
+->LAST STEP -> congfigure the server to accept remote connections by editing the pg_hba.conf gile
+	** remember trust, peer and shit ..
+
+
+cd var/lib/pgsql/DATA -folder missing figure out why !!!
+
+
+
+
+
+ 
+	
 
 
