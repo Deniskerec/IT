@@ -1,0 +1,11 @@
+As root 
+cd /etc/systemd/
+vim  logind.config
+delete # infornt of HandleLidSwitch
+HandleLidSwitch=ignore
+ 
+save file. 
+
+restart the login service with 
+systemctl restart systemd-logind.services
+

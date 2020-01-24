@@ -1,0 +1,41 @@
+Install postgresql Centos 8
+
+**INSTALLATION**
+
+-> list the available PostgreSQL modules
+	dnf module list postgresql
+	
+	sudo dnf install @postgresql:10
+-> Install the contrib package which provides several additional features
+for the PostgresQSL database 
+	(add later, need to learn about this -> https://www.postgresql.org/docs/10/contrib.html)
+	sudo dnf install postgresql-contrib
+
+-> Now you need to Inotialize the PostgreSQL database 
+	sudo postgresql-setup initdb
+** remember where the database is initalized. After the process is finished you get it listed in the terminal **
+( * Initializing database in '/var/lib/pgsql/data'
+ * Initialized, logs are in /var/lib/pgsql/initdb_postgresql.log )
+
+->Start Postgresql service and enable it to start on boot
+	sudo systemctl enable --now postgresql 
+
+_____________________________________________________________________
+
+**POSTGRESQL**
+
+-> connect to the server
+	sudo -u postgres psql
+	(postgres=# )
+
+* ROLES and AUTHENTICATION methods
+	(PostgreSQL handles the database access permissions using the concept of roles. Roles - database user/group of database users.)
+
+AUTH METHODS 
+- Trust- A role can connect without a password as long as the conditions defined in the pg_hba.cong are met 
+
+- Password
+
+- Ident
+
+
