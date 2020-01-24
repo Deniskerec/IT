@@ -1,0 +1,18 @@
+TCP - Transmission Control Protocol
+-> large file 
+IP (ima maximalna velikost) -> 
+	pakage loss -> be splitted up into mmultipole packages, somehitng they can get lost
+	Reordery -> not a correct sequence (zaporedje)
+	Multiple conversations (network conversation it enga mesta več paketov)
+	Flow Control 
+
+
+TCP -> (protocol number for TPC is 6)
+* breaks data automatically into smaller segments which of them fit into an IP package( host A send a package and host B recieve it as it was send )
+* once the host B recives the packages from the host A, the host B send an acknowledgement to the host A.
+* keeps track of the right sequence of the packages as it sends them  
+	- Byte stream service - connection oriented ( before anything happens the host A has to establish a TCP connection with the host B - like a phone call, before you can talk to anyone you have to dial the number.
+		Byte stream service meaning : 
+			once the TCP connection is established eather side can send a stream of bytes .. 
+		
+	- reliable
