@@ -79,8 +79,15 @@ default - 127.0.0.1
 ->LAST STEP -> congfigure the server to accept remote connections by editing the pg_hba.conf gile
 	** remember trust, peer and shit ..
 
+ ** maybe you need to reboot you'r pc **
+	sudo su
+	cd var/lib/pgsql/data
+	**for me - dnf instrall vim **
+	vim pg_hba.conf
 
-cd var/lib/pgsql/DATA -folder missing figure out why !!!
+-> if you just fool around change all METHODS to trust, so you can play with it, otherwise follow this link for mor einformation
+		
+	
 
 
 
