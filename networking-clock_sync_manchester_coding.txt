@@ -1,0 +1,24 @@
+NETWORKING -> Clock synchronization and Manchester coding. 
+
+sync. clock - (clock rate)
+	hostA and hostB need to have the timing of sending data synchonized.
+	Meaning, 
+
+		DATA TRANMITION
+
+	0  1 0  1 0 1 1  0 1 0 0 0 0 0 0 1 0
+5V	   _    _    __    _		 _ 
+0V	__| |__| |__|  |__| |___________| |__
+
+
+This is a representation of data transimition.. 
+
+!! If we want to know how many 0 are acctually in the farger _________ time( picture above), host a and host b has need to have a sync clock speed ( basicaly have the same idea of how long it take to send 1 bit of data)
+
+
+-> How can they be synced ?
+	- gps antena ( not optinal -- additional hardware)
+	- send seperate sygnals ( data + clock) -2 links are send ( 2 črte ka prenašata podatke)
+	 clock and data need to line up in that case perfectly !(clock faze)
+	
+Manchester coding is a simple way to combine data and clock sync into one signal, that is send between hosta, so no data can be lost. 
