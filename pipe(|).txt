@@ -1,0 +1,8 @@
+The pipe symbol (|)
+
+The pipe symbol(|) is used to pass the standard output of one command into the standard input of the next command. 
+
+example ( not accually working) 
+cat names.log | sort | uniq | wc -l 
+
+In this example the, the output of cat names.txt is passed into the sort  command. The output of the sort command is each line of the file rearranges in alphabetical order. This is subsequently(naknadno) piped into the uniq command, which removes any duplicate names. The output of the uniq is passed to the wc command. ws is a counting command, and with the -l flag set, it return the number of lines.

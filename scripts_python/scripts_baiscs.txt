@@ -1,0 +1,17 @@
+Shell scripts (python perhaps)
+__________________________________________
+-> A shell script is a  list of commands that are read by the sell and executed in order. Shell scripts also support some programming language fundamental, such as varables, flow control and data structures. Shell scripts disadvantages:
+	- Shell scripts easily can become overly complicated and unreadable to a developer wanint to improve them. 
+	- awkward syntax
+	- The code is unusable in other scripts. Core reuse among scrits tends to be difficult, and scripts tend to be very specific to a certain problem. 
+	-Libraries for advanced feature, such as HTML parsin or HTTP requests, are not as easily available as they are with modern programming and scripting languages. 
+__________________________________________
+
+-> Python scripts, why we use them:
+	- Python is installed by default on all the major Linux disstributuons.
+	- Python has a very easy to read and write syntax 
+	- Python is an interpreted language, meaing there is no compile stage. Thats why python is the ideal scripting language
+	- Pythpn comes with  a Read Eval Print Lopp (REPL -interactive computer programming environment ), this lets the dev tinker (ekperimentira??) with ideas, without having to write the full program out into a file. 
+	- Python is a fully featured programming language. Code reuse is simple because Python modules easily can be impoorted and used in any Python script
+	-Python has access to an excellent standard library and thousands of third-party libraries for all sors of advanced utilities, such as parsers and request libraries-
+	- Python can be a simple link in the chain- Python should not replace all the bash commands. It is as powefull to write in python programs that behave in a Unix fashion.
