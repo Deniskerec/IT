@@ -1,0 +1,18 @@
+Bash
+
+Bash is the default interpreter on many GNU/linux systems, this we have been using it even without realising. This is why our previous shell script work even without us definig the bash as an interpreter. To sww ehat is your default interpreter execteu command :
+
+echo $SHELL
+______________________________________________________________________________________________
+HOW to define your script's interpreter as BASH ?
+
+First locate a full path to its executable bunary using which command, prefix with a shebang #! and insert it as the first linf of you're script.
+
+which bash ( get the path for bash)
+ - in our case its -> /usr/bin/bash -> could be also /bin/bash
+______________________________________
+(we have a task.sh script created in a certain directory)
+
+vi task.sh
+- in the first line of that scipt add #!/usr/bin/bash
+save the script when edited and run it.	

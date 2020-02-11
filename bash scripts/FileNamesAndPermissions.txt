@@ -1,0 +1,13 @@
+File name and Permissions. 
+
+In order to execture a script we need to make it Executable using the chmod +x FILEAME command. 
+By default any newly created files are not executable of tis file extension suffix.
+
+The file extension on GNU/linux systems mostly does not have any meaning aprt from the fast, that upon the exeturion of 'ls' command to list all files and directories it is immediately clear that file with extensin '.sh' is plausibly a shell script file as an file with the extension .jpg is likely to be a lossy compressed image. 
+
+ON gnu /linux systems a file command can be used to infify a type of the file. 
+-> command : file task.sh 
+-> output: tash.sh : Bourne-AGain Shell script, ASCII text executable
+
+
+

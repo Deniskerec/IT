@@ -1,0 +1,4 @@
+Script exrecution
+
+There are some alternative ways on how to run bash scripts. 
+In a simplistic view, a bash script is nothing else, just a text file containing instructions to be executed in order from top to bottom. 
