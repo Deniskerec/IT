@@ -1,0 +1,19 @@
+First script
+
+The most basic -hello World script using echo command to the terminal output. 
+
+
+#!/usr/bin/bash
+
+echo "Hello Denis"
+
+
+
+do not forget to chmod +x filename
+
+after that run the ./hellodenis.sh
+
+output -> hello Denis
+
+
+
