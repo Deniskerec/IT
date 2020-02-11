@@ -1,0 +1,25 @@
+Relative vs Absolute Path 
+
+The difference between a relative and absolute file path. 
+
+Probably the best analofy to explain a relative vs. absolute file path is to visualise GNU/Linux filesystem as a multiple storey building. The root directory( building's entrance door indicated by / privedes the entry to the entire filesystem(building). Hence giving access to all direcotries(leves/rooms) and files(people).
+
+
+/bin/ -> essetial user cinnad binaries
+/boot/ -> static files of the boot loader 
+/dev/ -> device files
+/etc/ -> host specific system configuration ( required directores: OPT,XML..)
+/home/ -> user home directories
+/lib/ -> essental shared libraries and kernel modiles
+/media/ -> mount point for removable media
+/mnt/ -> mount point for a temporarily mounted filesystem 
+/op/ -> add-on application software packages
+/sbin/ -> system binaries
+/srv/ -> data for services provicec by this system
+/tmp/ -> temporary files
+/usr/ -> multi user utilities and application secondary hierarchy -> required direcotries: bin, include, lib, local,sbin, share
+/var/ variable files
+/root/ -> home directory for the root user
+/proc/ -> virtual filesystem documenting kernes and press status as text files.
+
+
