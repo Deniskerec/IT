@@ -1,0 +1,30 @@
+Bash scripting for idiots
+
+Bash is a command language interpreter.
+* Shell is a macro processor which allows for an interactive or non-interactive command exectuion.
+______________________________________________________________________________________
+What is scripting?
+
+Scripting allow for an automatic commands execution that would otherwise be executed interactiverly one-by-one. 
+
+______________________________________________________________________________________
+
+Basics
+
+You can just create a file ( touch filename.sh) .sh !!!
+
+for example enter 	data - first line
+			cal  - new line(2nd line)
+			pwf  - new line(3th line)
+			ls   - new line(4th line)
+
+after doing this you have to change the permission, so you can run the script
+
+chmon +x filename.sh
+
+after that, you just run the script.
+
+./filename.sh
+
+
+		
