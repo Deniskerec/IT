@@ -1,0 +1,15 @@
+how to make a bootable CentosOS on fedora
+
+
+lsblk - name of the USb
+
+
+
+umount /usb/name  ( its -> /dev/ka piše
+
+
+
+after that do this, make sure you change paths
+
+sudo dd bs=4M if=/home/denis/Downloads/CentOS-8.1.1911-x86_64-dvd1.iso  of=/dev/sdc status=progress oflag=sync
+

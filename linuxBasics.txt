@@ -1,0 +1,52 @@
+
+!! grep !! 
+This is one of the most useful commands for the admin. It receives a file or the output
+of a command as an input and shows only those lines that contain a certain pattern. For
+example, to see the contents of the /etc/passwd file with cat like -
+             cat /etc/passwd 
+ or we can specify exsaclty what we need with -
+             cat /etc/passwd | grep root 
+
+_____________________
+
+!! more !!
+
+If the file we try to see with the cat command is too long, we won’t be able to see all the
+content in a single screen, as the text will immediately scroll down. If we want to see the
+full content, we can use the more command. This way, we’ll be able to see the whole text
+one screen at a time, manually passing to the next one..
+
+_____________________
+
+!! less !!
+
+less is pretty similar to more . We can see a long file one screen at the time, the only
+difference being that less allows us to go back to a previous page. With more , once we
+advance to the next page, we can’t go back (unless we exit more and execute it again).
+
+_____________________
+
+!! head !!
+
+We’ve seen that we can use cat to see the content of a file. Nevertheless, if the file is too
+long, the content will fill many screens. We could use more or less to see one page at a
+time, but maybe we just want to see the first lines. In this case, we can simply type “head
+filename”, and we’ll see the first 10 lines (by default) of the file.
+
+If we wanted to see just the first three lines, we’d use -n 3 . For example-
+
+# head -n 3 /etc/group
+
+____________________
+
+!! tail !!
+
+tail is a command similar to head , but it will show the last lines of the file instead of the
+first ones. So, to see the last four lines of the file /etc/group , we can do this:
+
+[root@localhost named]# tail -n 4 /etc/group
+
+A really useful option of the tail command is -f . The last lines of the file will appear
+on the screen, which will also show the new lines added in real time. For instance, if we
+want to see what system events are taking place right now, we can open the /var/log/
+messages file with the -f option. Once we’re done, we exit by pressing Ctrl+C.

@@ -1,0 +1,2 @@
+Use man commands to display manual page of any desired command. For example to display a manual page for the ls comman execute man ls. To quit manal page ress the q key. 
+
