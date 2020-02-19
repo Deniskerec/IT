@@ -1,0 +1,13 @@
+Every time a progream has to comminicate with the network, it uses what the TCP protocl calls "ports".
+
+If we want to know how many open ports we currently have, we can use netsta.
+
+by defoult if will show only the ports with an establiched connection
+
+OPTIONS
+-a show all open ports and not only those already connected
+-p identify the program that opened the port
+-t TCP
+-u UDP
+-n show port number insted of port name
+

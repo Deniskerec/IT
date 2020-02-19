@@ -1,0 +1,24 @@
+static IP 
+
+As happened in CentOS 6, the IP address we have just assigned will be temporary. If
+we want to make it persistent, we’ll have to edit the /etc/sysconfig/network-scripts/
+ifcfg-enp0s3 file and add the following lines:
+IPADDR=192.168.10.19
+BOOTPROTO=static
+NETMASK=255.255.255.0
+TYPE=Ethernet
+_________________________________
+We’ll have to set the parameter ONBOOT=yes , so that the network interface gets
+activated every time the system boots. This way, we have assigned a static IP address to
+the server, but it is more convenient to use a network utility. In CentOS 6 we used system-
+config-network , but this command is not available in CentOS 7. Instead, we must use
+nmtui
+
+edit -> iPv4 ( my case the ip for port forwarding was 192.168.1.15/24)
+
+Address 192.168.1.15
+Gateway 192.168.1.1
+
+save 
+restart network.
+

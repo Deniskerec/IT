@@ -1,0 +1,9 @@
+You have to install with yum
+
+dnf/yum install lsof
+
+This tool lists the open files in the system, but we can use it to see what process is
+listening in a given port.
+
+(sudo)
+lsof -i :22 -> shows whats going on there.

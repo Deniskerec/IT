@@ -1,0 +1,17 @@
+We have to open port on the modem so from the outside network ( not local ) you can access the server. 
+
+for example (default)
+
+ssh      port 22
+apache   port 80
+psql     port 5432
+
+_________________________________________________
+
+I also had to add Incoming filtering (because the firewall on my modem blocks all incoming IP Traffic. Ip traffic can be accepted by setting up filters. 
+
+
+
+ICMP -> ssh
+TCP or UDP -> so some traffic ?? dont know exactly what this is but i gave it a range from 1:65535
+

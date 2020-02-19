@@ -1,0 +1,9 @@
+We get to know the open ports that can be accessed through the network.
+
+nmap -ip- (withouth columns)
+
+for example -> nmap 192.168.1.15 
+
+We can also specify the ports we want to check. 
+
+
