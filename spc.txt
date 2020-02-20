@@ -1,0 +1,6 @@
+scp - protocol to copy from ssh connection ..
+
+
+from my local computer to the host (server)
+
+from (fedorpc) ssh -P 2222 denis@ip:/route/what/to/copy/from /route/where/to/copy/to
