@@ -1,0 +1,19 @@
+[2020-02-20 06:51:23] __rvm_patch
+__rvm_patch () 
+{ 
+    \patch "$@" || return $?
+}
+current path: /usr/local/rvm/src/ruby-1.9.2-p330
+GEM_HOME=/usr/local/rvm/gems/ruby-2.6.3
+GEM_PATH=/usr/local/rvm/gems/ruby-2.6.3:/usr/local/rvm/gems/ruby-2.6.3@global
+PATH=/usr/local/rvm/gems/ruby-2.6.3/bin:/usr/local/rvm/gems/ruby-2.6.3@global/bin:/usr/local/rvm/rubies/ruby-2.6.3/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/rvm/bin
+command(8): __rvm_patch -F 25 -p1 -N -f -i /usr/local/rvm/patches/ruby/1.9.2/openssl3.patch
+++ patch -F 25 -p1 -N -f -i /usr/local/rvm/patches/ruby/1.9.2/openssl3.patch
+patching file ext/openssl/extconf.rb
+Hunk #1 succeeded at 104 with fuzz 3.
+patching file ext/openssl/ossl_ssl.c
+Hunk #1 succeeded at 113 (offset 4 lines).
+patching file test/openssl/test_ssl.rb
+Hunk #1 FAILED at 912.
+1 out of 1 hunk FAILED -- saving rejects to file test/openssl/test_ssl.rb.rej
+++ return 1

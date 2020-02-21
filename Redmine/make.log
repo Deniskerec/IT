@@ -1,0 +1,2651 @@
+[2020-02-20 08:30:45] __rvm_make
+__rvm_make () 
+{ 
+    \make "$@" || return $?
+}
+current path: /usr/local/rvm/src/ruby-1.9.2-p330
+GEM_HOME=/usr/local/rvm/gems/ruby-2.6.3
+GEM_PATH=/usr/local/rvm/gems/ruby-2.6.3:/usr/local/rvm/gems/ruby-2.6.3@global
+PATH=/usr/local/rvm/gems/ruby-2.6.3/bin:/usr/local/rvm/gems/ruby-2.6.3@global/bin:/usr/local/rvm/rubies/ruby-2.6.3/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/rvm/bin
+command(2): __rvm_make -j4
+++ make -j4
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o main.o -c main.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o dln.o -c dln.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o dmyencoding.o -c dmyencoding.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o version.o -c version.c
+In file included from dmyencoding.c:2:
+encoding.c: In function ‘rb_enc_get_index’:
+encoding.c:659:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if (NIL_P(obj)) break;
+     ^
+encoding.c:660:7: note: here
+       case T_DATA:
+       ^~~~
+encoding.c: In function ‘enc_capable’:
+encoding.c:619:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if (is_data_encoding(obj)) return TRUE;
+     ^
+encoding.c:620:7: note: here
+       default:
+       ^~~~~~~
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o miniprelude.o -c miniprelude.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o array.o -c array.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o bignum.o -c bignum.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o class.o -c class.c
+In file included from array.c:14:
+array.c: In function ‘rb_ary_cmp’:
+./include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+array.c:3231:12: note: in expansion of macro ‘INT2FIX’
+     return INT2FIX(-1);
+            ^~~~~~~
+In file included from bignum.c:12:
+bignum.c: In function ‘rb_big_cmp’:
+./include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+bignum.c:1412:23: note: in expansion of macro ‘INT2FIX’
+   if (a > 0.0) return INT2FIX(-1);
+                       ^~~~~~~
+./include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+bignum.c:1423:51: note: in expansion of macro ‘INT2FIX’
+     if (RBIGNUM_SIGN(x) < RBIGNUM_SIGN(y)) return INT2FIX(-1);
+                                                   ^~~~~~~
+./include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+bignum.c:1425:29: note: in expansion of macro ‘INT2FIX’
+  return (RBIGNUM_SIGN(x)) ? INT2FIX(-1) : INT2FIX(1);
+                             ^~~~~~~
+./include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+bignum.c:1427:42: note: in expansion of macro ‘INT2FIX’
+  return (RBIGNUM_SIGN(x)) ? INT2FIX(1) : INT2FIX(-1);
+                                          ^~~~~~~
+./include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+bignum.c:1435:34: note: in expansion of macro ‘INT2FIX’
+  (RBIGNUM_SIGN(x) ? INT2FIX(1) : INT2FIX(-1)) :
+                                  ^~~~~~~
+./include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+bignum.c:1436:25: note: in expansion of macro ‘INT2FIX’
+      (RBIGNUM_SIGN(x) ? INT2FIX(-1) : INT2FIX(1));
+                         ^~~~~~~
+bignum.c: In function ‘big_op’:
+./include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+bignum.c:1456:22: note: in expansion of macro ‘INT2FIX’
+   if (a > 0.0) rel = INT2FIX(-1);
+                      ^~~~~~~
+bignum.c: In function ‘rb_big_neg’:
+./include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+bignum.c:1643:20: note: in expansion of macro ‘INT2FIX’
+     if (!i) return INT2FIX(~(SIGNED_VALUE)0);
+                    ^~~~~~~
+bignum.c: In function ‘bdigbitsize’:
+bignum.c:2645:23: warning: left shift of negative value [-Wshift-negative-value]
+     BDIGIT bits = (~0 << nb);
+                       ^~
+In file included from bignum.c:12:
+bignum.c: In function ‘check_shiftdown’:
+./include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+bignum.c:3140:40: note: in expansion of macro ‘INT2FIX’
+  return RBIGNUM_SIGN(x) ? INT2FIX(0) : INT2FIX(-1);
+                                        ^~~~~~~
+bignum.c: In function ‘big_rshift’:
+./include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+bignum.c:3264:13: note: in expansion of macro ‘INT2FIX’
+      return INT2FIX(-1);
+             ^~~~~~~
+./include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+bignum.c:3274:14: note: in expansion of macro ‘INT2FIX’
+  else return INT2FIX(-1);
+              ^~~~~~~
+bignum.c: In function ‘rb_cstr_to_inum’:
+bignum.c:610:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if (str[0] == '0' && (str[1] == 'o'||str[1] == 'O')) {
+     ^
+bignum.c:613:7: note: here
+       case 4: case 5: case 6: case 7:
+       ^~~~
+bignum.c:617:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if (str[0] == '0' && (str[1] == 'd'||str[1] == 'D')) {
+     ^
+bignum.c:620:7: note: here
+       case 9: case 11: case 12: case 13: case 14: case 15:
+       ^~~~
+bignum.c: In function ‘big_fdiv’:
+bignum.c:2691:6: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  y = rb_int2big(FIX2LONG(y));
+      ^~~~~~~~~~~~~~~~~~~~~~~
+bignum.c:2692:7: note: here
+       case T_BIGNUM: {
+       ^~~~
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o compar.o -c compar.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o complex.o -c complex.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o dir.o -c dir.c
+dir.c: In function ‘dir_read’:
+dir.c:582:5: warning: ‘readdir_r’ is deprecated [-Wdeprecated-declarations]
+     if (READDIR(dirp->dir, dirp->enc, &STRUCT_DIRENT(entry), dp)) {
+     ^~
+In file included from dir.c:25:
+/usr/include/dirent.h:183:12: note: declared here
+ extern int readdir_r (DIR *__restrict __dirp,
+            ^~~~~~~~~
+dir.c: In function ‘dir_each’:
+dir.c:624:5: warning: ‘readdir_r’ is deprecated [-Wdeprecated-declarations]
+     while (READDIR(dirp->dir, dirp->enc, &STRUCT_DIRENT(entry), dp)) {
+     ^~~~~
+In file included from dir.c:25:
+/usr/include/dirent.h:183:12: note: declared here
+ extern int readdir_r (DIR *__restrict __dirp,
+            ^~~~~~~~~
+dir.c: In function ‘glob_helper’:
+dir.c:1363:2: warning: ‘readdir_r’ is deprecated [-Wdeprecated-declarations]
+  while (READDIR(dirp, enc, &STRUCT_DIRENT(entry), dp)) {
+  ^~~~~
+In file included from dir.c:25:
+/usr/include/dirent.h:183:12: note: declared here
+ extern int readdir_r (DIR *__restrict __dirp,
+            ^~~~~~~~~
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o dln_find.o -c dln_find.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o enum.o -c enum.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o enumerator.o -c enumerator.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o error.o -c error.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o eval.o -c eval.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o load.o -c load.c
+load.c: In function ‘search_required’:
+load.c:542:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if (ft)
+     ^
+load.c:544:7: note: here
+       case 1:
+       ^~~~
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o proc.o -c proc.c
+In file included from eval.c:14:
+eval.c: In function ‘rb_rescue2’:
+eval_intern.h:111:23: warning: ‘_th’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   rb_thread_t * const _th = th; \
+                       ^~~
+eval_intern.h:111:23: note: ‘_th’ was declared here
+   rb_thread_t * const _th = th; \
+                       ^~~
+eval_intern.h:124:20: note: in expansion of macro ‘TH_PUSH_TAG’
+ #define PUSH_TAG() TH_PUSH_TAG(GET_THREAD())
+                    ^~~~~~~~~~~
+eval.c:666:7: note: in expansion of macro ‘PUSH_TAG’
+       PUSH_TAG();
+       ^~~~~~~~
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o file.o -c file.c
+In file included from file.c:22:
+file.c: In function ‘rb_stat_cmp’:
+./include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+file.c:303:51: note: in expansion of macro ‘INT2FIX’
+             if (ts1.tv_nsec < ts2.tv_nsec) return INT2FIX(-1);
+                                                   ^~~~~~~
+./include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+file.c:306:45: note: in expansion of macro ‘INT2FIX’
+         if (ts1.tv_sec < ts2.tv_sec) return INT2FIX(-1);
+                                             ^~~~~~~
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o gc.o -c gc.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o hash.o -c hash.c
+gc.c: In function ‘make_io_deferred’:
+gc.c:1968:24: warning: cast between incompatible function types from ‘int (*)(rb_io_t *)’ {aka ‘int (*)(struct rb_io_t *)’} to ‘void (*)(void *)’ [-Wcast-function-type]
+     p->as.data.dfree = (void (*)(void*))rb_io_fptr_finalize;
+                        ^
+gc.c: In function ‘os_obj_of_i’:
+gc.c:2401:6: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   if (FL_TEST(p, FL_SINGLETON))
+      ^
+gc.c:2403:8: note: here
+        default:
+        ^~~~~~~
+hash.c: In function ‘rb_hash_s_create’:
+hash.c:394:11: warning: this statement may fall through [-Wimplicit-fallthrough=]
+       val = RARRAY_PTR(v)[1];
+       ~~~~^~~~~~~~~~~~~~~~~~
+hash.c:395:5: note: here
+     case 1:
+     ^~~~
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o inits.o -c inits.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o io.o -c io.c
+io.c: In function ‘rb_io_wait_readable’:
+io.c:700:5: warning: cast between incompatible function types from ‘void (*)(rb_fdset_t *)’ {aka ‘void (*)(struct <anonymous> *)’} to ‘VALUE (*)(VALUE)’ {aka ‘long unsigned int (*)(long unsigned int)’} [-Wcast-function-type]
+     (VALUE (*)(VALUE))rb_fd_term, (VALUE)&rfds);
+     ^
+io.c: In function ‘rb_io_wait_writable’:
+io.c:745:5: warning: cast between incompatible function types from ‘void (*)(rb_fdset_t *)’ {aka ‘void (*)(struct <anonymous> *)’} to ‘VALUE (*)(VALUE)’ {aka ‘long unsigned int (*)(long unsigned int)’} [-Wcast-function-type]
+     (VALUE (*)(VALUE))rb_fd_term, (VALUE)&wfds);
+     ^
+file.c: In function ‘file_expand_path’:
+file.c:2883:3: warning: ‘b’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   rb_raise(rb_eArgError, "non-absolute home of %.*s", (int)userlen, b);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o marshal.o -c marshal.c
+marshal.c: In function ‘r_object0’:
+marshal.c:1504:7: warning: this statement may fall through [-Wimplicit-fallthrough=]
+    if (bs & 1) --dst;
+       ^
+marshal.c:1505:9: note: here
+         default: bs = 0; break;
+         ^~~~~~~
+marshal.c: In function ‘load_mantissa’:
+marshal.c:353:19: warning: this statement may fall through [-Wimplicit-fallthrough=]
+        default: m = *buf++ & 0xff;
+                 ~~^~~~~~~~~~~~~~~
+marshal.c:355:8: note: here
+        case 3: m = (m << 8) | (*buf++ & 0xff);
+        ^~~~
+marshal.c:355:18: warning: this statement may fall through [-Wimplicit-fallthrough=]
+        case 3: m = (m << 8) | (*buf++ & 0xff);
+                ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+marshal.c:358:8: note: here
+        case 2: m = (m << 8) | (*buf++ & 0xff);
+        ^~~~
+marshal.c:358:18: warning: this statement may fall through [-Wimplicit-fallthrough=]
+        case 2: m = (m << 8) | (*buf++ & 0xff);
+                ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+marshal.c:361:8: note: here
+        case 1: m = (m << 8) | (*buf++ & 0xff);
+        ^~~~
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o math.o -c math.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o node.o -c node.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o numeric.o -c numeric.c
+In file included from numeric.c:12:
+numeric.c: In function ‘rb_dbl_cmp’:
+./include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+numeric.c:1007:23: note: in expansion of macro ‘INT2FIX’
+     if (a < b) return INT2FIX(-1);
+                       ^~~~~~~
+numeric.c: In function ‘flo_cmp’:
+./include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+numeric.c:1035:18: note: in expansion of macro ‘INT2FIX’
+      else return INT2FIX(-1);
+                  ^~~~~~~
+./include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+numeric.c:1048:13: note: in expansion of macro ‘INT2FIX’
+      return INT2FIX(-1);
+             ^~~~~~~
+numeric.c: In function ‘int_chr’:
+numeric.c:2093:8: warning: comparison of unsigned expression < 0 is always false [-Wtype-limits]
+  if (i < 0) {
+        ^
+In file included from numeric.c:12:
+numeric.c: In function ‘fix_pow’:
+./include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+numeric.c:2621:10: note: in expansion of macro ‘INT2FIX’
+   return INT2FIX(-1);
+          ^~~~~~~
+./include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+numeric.c:2635:18: note: in expansion of macro ‘INT2FIX’
+      else return INT2FIX(-1);
+                  ^~~~~~~
+numeric.c: In function ‘fix_cmp’:
+./include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+numeric.c:2698:9: note: in expansion of macro ‘INT2FIX’
+  return INT2FIX(-1);
+         ^~~~~~~
+numeric.c: In function ‘fix_rshift’:
+./include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+numeric.c:2956:22: note: in expansion of macro ‘INT2FIX’
+  if (val < 0) return INT2FIX(-1);
+                      ^~~~~~~
+numeric.c: In function ‘Init_Numeric’:
+./include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+numeric.c:3454:43: note: in expansion of macro ‘INT2FIX’
+     rb_define_const(rb_cFloat, "MIN_EXP", INT2FIX(DBL_MIN_EXP));
+                                           ^~~~~~~
+./include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+numeric.c:3456:46: note: in expansion of macro ‘INT2FIX’
+     rb_define_const(rb_cFloat, "MIN_10_EXP", INT2FIX(DBL_MIN_10_EXP));
+                                              ^~~~~~~
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o object.o -c object.c
+In file included from object.c:14:
+object.c: In function ‘rb_mod_cmp’:
+./include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+object.c:1392:9: note: in expansion of macro ‘INT2FIX’
+  return INT2FIX(-1);
+         ^~~~~~~
+object.c: In function ‘rb_f_integer’:
+object.c:2121:7: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  base = NUM2INT(argv[1]);
+object.c:2122:7: note: here
+       case 1:
+       ^~~~
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o pack.o -c pack.c
+pack.c:89:28: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+ #if GCC_VERSION_SINCE(4,3,0)
+                            ^
+pack.c:89:28: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o parse.o -c parse.c
+In file included from parse.y:22:
+parse.h:199:21: warning: ‘struct parser_params’ declared inside parameter list will not be visible outside of this definition or declaration
+ int yyparse (struct parser_params *parser);
+                     ^~~~~~~~~~~~~
+In file included from parse.y:21:
+parse.y: In function ‘ruby_yyparse’:
+node.h:278:43: warning: left shift of negative value [-Wshift-negative-value]
+     RNODE(n)->flags=((RNODE(n)->flags&~(-1<<NODE_LSHIFT))|(((l)&NODE_LMASK)<<NODE_LSHIFT))
+                                           ^~
+parse.y:1327:4: note: in expansion of macro ‘nd_set_line’
+    nd_set_line($$, $<num>2);
+    ^~~~~~~~~~~
+node.h:278:43: warning: left shift of negative value [-Wshift-negative-value]
+     RNODE(n)->flags=((RNODE(n)->flags&~(-1<<NODE_LSHIFT))|(((l)&NODE_LMASK)<<NODE_LSHIFT))
+                                           ^~
+parse.y:2611:5: note: in expansion of macro ‘nd_set_line’
+     nd_set_line($3, $<num>2);
+     ^~~~~~~~~~~
+node.h:278:43: warning: left shift of negative value [-Wshift-negative-value]
+     RNODE(n)->flags=((RNODE(n)->flags&~(-1<<NODE_LSHIFT))|(((l)&NODE_LMASK)<<NODE_LSHIFT))
+                                           ^~
+parse.y:2614:4: note: in expansion of macro ‘nd_set_line’
+    nd_set_line($$, $<num>2);
+    ^~~~~~~~~~~
+node.h:278:43: warning: left shift of negative value [-Wshift-negative-value]
+     RNODE(n)->flags=((RNODE(n)->flags&~(-1<<NODE_LSHIFT))|(((l)&NODE_LMASK)<<NODE_LSHIFT))
+                                           ^~
+parse.y:2904:4: note: in expansion of macro ‘nd_set_line’
+    nd_set_line($$, $<num>4);
+    ^~~~~~~~~~~
+node.h:278:43: warning: left shift of negative value [-Wshift-negative-value]
+     RNODE(n)->flags=((RNODE(n)->flags&~(-1<<NODE_LSHIFT))|(((l)&NODE_LMASK)<<NODE_LSHIFT))
+                                           ^~
+parse.y:2949:4: note: in expansion of macro ‘nd_set_line’
+    nd_set_line($$, $<num>3);
+    ^~~~~~~~~~~
+node.h:278:43: warning: left shift of negative value [-Wshift-negative-value]
+     RNODE(n)->flags=((RNODE(n)->flags&~(-1<<NODE_LSHIFT))|(((l)&NODE_LMASK)<<NODE_LSHIFT))
+                                           ^~
+parse.y:2970:4: note: in expansion of macro ‘nd_set_line’
+    nd_set_line($$, $<num>1);
+    ^~~~~~~~~~~
+node.h:278:43: warning: left shift of negative value [-Wshift-negative-value]
+     RNODE(n)->flags=((RNODE(n)->flags&~(-1<<NODE_LSHIFT))|(((l)&NODE_LMASK)<<NODE_LSHIFT))
+                                           ^~
+parse.y:2992:4: note: in expansion of macro ‘nd_set_line’
+    nd_set_line($$, $<num>1);
+    ^~~~~~~~~~~
+node.h:278:43: warning: left shift of negative value [-Wshift-negative-value]
+     RNODE(n)->flags=((RNODE(n)->flags&~(-1<<NODE_LSHIFT))|(((l)&NODE_LMASK)<<NODE_LSHIFT))
+                                           ^~
+parse.y:3544:4: note: in expansion of macro ‘nd_set_line’
+    nd_set_line($$, $<num>2);
+    ^~~~~~~~~~~
+node.h:278:43: warning: left shift of negative value [-Wshift-negative-value]
+     RNODE(n)->flags=((RNODE(n)->flags&~(-1<<NODE_LSHIFT))|(((l)&NODE_LMASK)<<NODE_LSHIFT))
+                                           ^~
+parse.y:3690:4: note: in expansion of macro ‘nd_set_line’
+    nd_set_line($$, $<num>2);
+    ^~~~~~~~~~~
+node.h:278:43: warning: left shift of negative value [-Wshift-negative-value]
+     RNODE(n)->flags=((RNODE(n)->flags&~(-1<<NODE_LSHIFT))|(((l)&NODE_LMASK)<<NODE_LSHIFT))
+                                           ^~
+parse.y:3709:4: note: in expansion of macro ‘nd_set_line’
+    nd_set_line($$, $<num>2);
+    ^~~~~~~~~~~
+parse.y: In function ‘parser_heredoc_identifier’:
+node.h:278:43: warning: left shift of negative value [-Wshift-negative-value]
+     RNODE(n)->flags=((RNODE(n)->flags&~(-1<<NODE_LSHIFT))|(((l)&NODE_LMASK)<<NODE_LSHIFT))
+                                           ^~
+parse.y:6049:5: note: in expansion of macro ‘nd_set_line’
+     nd_set_line(lex_strterm, ruby_sourceline);
+     ^~~~~~~~~~~
+parse.y: In function ‘node_newnode’:
+node.h:278:43: warning: left shift of negative value [-Wshift-negative-value]
+     RNODE(n)->flags=((RNODE(n)->flags&~(-1<<NODE_LSHIFT))|(((l)&NODE_LMASK)<<NODE_LSHIFT))
+                                           ^~
+parse.y:7850:5: note: in expansion of macro ‘nd_set_line’
+     nd_set_line(n, ruby_sourceline);
+     ^~~~~~~~~~~
+parse.y: In function ‘fixpos’:
+node.h:278:43: warning: left shift of negative value [-Wshift-negative-value]
+     RNODE(n)->flags=((RNODE(n)->flags&~(-1<<NODE_LSHIFT))|(((l)&NODE_LMASK)<<NODE_LSHIFT))
+                                           ^~
+parse.y:7882:5: note: in expansion of macro ‘nd_set_line’
+     nd_set_line(node, nd_line(orig));
+     ^~~~~~~~~~~
+parse.y: In function ‘ruby_yyparse’:
+parse.y:331:43: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ #define rb_node_newnode(type, a1, a2, a3) node_newnode(parser, type, a1, a2, a3)
+                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+node.h:349:30: note: in expansion of macro ‘rb_node_newnode’
+ #define NEW_NODE(t,a0,a1,a2) rb_node_newnode((t),(VALUE)(a0),(VALUE)(a1),(VALUE)(a2))
+                              ^~~~~~~~~~~~~~~
+parse.y:3888:15: note: in expansion of macro ‘NEW_NODE’
+        node = NEW_NODE(NODE_DSTR, STR_NEW0(), 1, NEW_LIST(node));
+               ^~~~~~~~
+parse.y:3889:6: note: here
+      case NODE_DSTR:
+      ^~~~
+parse.y:282:22: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ #define yyerror(msg) parser_yyerror(parser, msg)
+                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+parse.y:4696:5: note: in expansion of macro ‘yyerror’
+     yyerror("can't define singleton method for literals");
+     ^~~~~~~
+parse.y:4697:10: note: here
+          default:
+          ^~~~~~~
+parse.y: In function ‘parser_yylex’:
+parse.y:6631:8: warning: this statement may fall through [-Wimplicit-fallthrough=]
+     if ((c = nextc()) != '.') {
+        ^
+parse.y:6637:8: note: here
+        default:
+        ^~~~~~~
+parse.y:6639:16: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   lex_nextline = lex_lastline;
+parse.y:6640:8: note: here
+        case -1:  /* EOF no decrement*/
+        ^~~~
+parse.y:7626:10: warning: this statement may fall through [-Wimplicit-fallthrough=]
+      if (!parser_is_identchar()) {
+          ^
+parse.y:7630:4: note: here
+    case '0':
+    ^~~~
+parse.y:7289:12: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  paren_nest--;
+parse.y:7290:7: note: here
+       case '}':
+       ^~~~
+parse.y: In function ‘parser_here_document’:
+parse.y:6133:23: warning: this statement may fall through [-Wimplicit-fallthrough=]
+       if (--pend == p || pend[-1] != '\r') {
+           ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+parse.y:6137:5: note: here
+     case '\r':
+     ^~~~
+parse.y: In function ‘parser_read_escape’:
+parse.y:5621:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ((c = nextc()) != '-') {
+     ^
+parse.y:5625:7: note: here
+       case 'c':
+       ^~~~
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o process.o -c process.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o random.o -c random.c
+In file included from process.c:14:
+process.c: In function ‘check_exec_fds’:
+./include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+process.c:1536:46: note: in expansion of macro ‘INT2FIX’
+                 rb_hash_aset(h, INT2FIX(fd), INT2FIX(-1));
+                                              ^~~~~~~
+process.c: In function ‘rb_fork_err’:
+process.c:2493:14: warning: cast between incompatible function types from ‘void (*)(int)’ to ‘VALUE (*)()’ {aka ‘long unsigned int (*)()’} [-Wcast-function-type]
+   rb_protect((VALUE (*)())rb_thread_sleep, 1, &state);
+              ^
+process.c: In function ‘p_uid_change_privilege’:
+process.c:4111:35: warning: operand of ?: changes signedness from ‘int’ to ‘uid_t’ {aka ‘unsigned int’} due to unsignedness of other operand [-Wsign-compare]
+  if (setresuid((getuid() == uid)? -1: uid,
+                                   ^~
+process.c:4112:29: warning: operand of ?: changes signedness from ‘int’ to ‘uid_t’ {aka ‘unsigned int’} due to unsignedness of other operand [-Wsign-compare]
+         (geteuid() == uid)? -1: uid,
+                             ^~
+process.c:4113:33: warning: operand of ?: changes signedness from ‘int’ to ‘uid_t’ {aka ‘unsigned int’} due to unsignedness of other operand [-Wsign-compare]
+         (SAVED_USER_ID == uid)? -1: uid) < 0) rb_sys_fail(0);
+                                 ^~
+process.c: In function ‘p_gid_change_privilege’:
+process.c:4732:35: warning: operand of ?: changes signedness from ‘int’ to ‘gid_t’ {aka ‘unsigned int’} due to unsignedness of other operand [-Wsign-compare]
+  if (setresgid((getgid() == gid)? -1: gid,
+                                   ^~
+process.c:4733:29: warning: operand of ?: changes signedness from ‘int’ to ‘gid_t’ {aka ‘unsigned int’} due to unsignedness of other operand [-Wsign-compare]
+         (getegid() == gid)? -1: gid,
+                             ^~
+process.c:4734:34: warning: operand of ?: changes signedness from ‘int’ to ‘gid_t’ {aka ‘unsigned int’} due to unsignedness of other operand [-Wsign-compare]
+         (SAVED_GROUP_ID == gid)? -1: gid) < 0) rb_sys_fail(0);
+                                  ^~
+process.c: In function ‘rb_fork_err’:
+process.c:2495:6: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   if (!state) continue;
+      ^
+process.c:2497:4: note: here
+    default:
+    ^~~~~~~
+random.c: In function ‘random_load’:
+random.c:659:7: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  seed = ary[2];
+  ~~~~~^~~~~~~~
+random.c:660:7: note: here
+       case 2:
+       ^~~~
+random.c:661:7: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  left = ary[1];
+  ~~~~~^~~~~~~~
+random.c:662:7: note: here
+       case 1:
+       ^~~~
+random.c: In function ‘random_rand’:
+random.c:1080:21: warning: this statement may fall through [-Wimplicit-fallthrough=]
+       case T_FLOAT: {
+                     ^
+random.c:1087:7: note: here
+       default:
+       ^~~~~~~
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o range.o -c range.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o rational.o -c rational.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o re.o -c re.c
+re.c: In function ‘unescape_nonascii’:
+re.c:2189:17: warning: this statement may fall through [-Wimplicit-fallthrough=]
+                 {
+                 ^
+re.c:2200:15: note: here
+               case '0': /* \0, \0O, \0OO */
+               ^~~~
+re.c: In function ‘read_escaped_byte’:
+re.c:1962:22: warning: this statement may fall through [-Wimplicit-fallthrough=]
+         if (p == end || *p++ != '-') {
+             ~~~~~~~~~^~~~~~~~~~~~~~
+re.c:1966:7: note: here
+       case 'c': /* \cX, \c\M-X */
+       ^~~~
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o regcomp.o -c regcomp.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o regenc.o -c regenc.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o regerror.o -c regerror.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o regexec.o -c regexec.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o regparse.o -c regparse.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o regsyntax.o -c regsyntax.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o ruby.o -c ruby.c
+ruby.c: In function ‘proc_options’:
+ruby.c:719:20: warning: this statement may fall through [-Wimplicit-fallthrough=]
+      opt->do_print = TRUE;
+ruby.c:721:4: note: here
+    case 'n':
+    ^~~~
+ruby.c:745:19: warning: this statement may fall through [-Wimplicit-fallthrough=]
+      opt->verbose = 1;
+      ~~~~~~~~~~~~~^~~
+ruby.c:746:4: note: here
+    case 'w':
+    ^~~~
+ruby.c:1056:9: warning: this statement may fall through [-Wimplicit-fallthrough=]
+      if (!s[1])
+         ^
+ruby.c:1059:4: note: here
+    default:
+    ^~~~~~~
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o safe.o -c safe.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o signal.o -c signal.c
+signal.c: In function ‘ruby_signal’:
+signal.c:470:27: warning: cast between incompatible function types from ‘sighandler_t’ {aka ‘void (*)(int)’} to ‘void (*)(int,  siginfo_t *, void *)’ {aka ‘void (*)(int,  struct <anonymous> *, void *)’} [-Wcast-function-type]
+     sigact.sa_sigaction = (ruby_sigaction_t*)handler;
+                           ^
+signal.c: In function ‘default_handler’:
+signal.c:735:16: warning: cast between incompatible function types from ‘void (*)(int,  siginfo_t *, void *)’ {aka ‘void (*)(int,  struct <anonymous> *, void *)’} to ‘void (*)(int)’ [-Wcast-function-type]
+         func = (sighandler_t)sigsegv;
+                ^
+signal.c: In function ‘Init_signal’:
+signal.c:1138:33: warning: cast between incompatible function types from ‘void (*)(int,  siginfo_t *, void *)’ {aka ‘void (*)(int,  struct <anonymous> *, void *)’} to ‘void (*)(int)’ [-Wcast-function-type]
+     install_sighandler(SIGSEGV, (sighandler_t)sigsegv);
+                                 ^
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o sprintf.o -c sprintf.c
+sprintf.c: In function ‘remove_sign_bits’:
+sprintf.c:26:32: warning: left shift of negative value [-Wshift-negative-value]
+ #define EXTENDSIGN(n, l) (((~0 << (n)) >> (((n)*(l)) % BITSPERDIG)) & ~(~0 << (n)))
+                                ^~
+sprintf.c:43:8: note: in expansion of macro ‘EXTENDSIGN’
+  *t |= EXTENDSIGN(3, strlen(t));
+        ^~~~~~~~~~
+sprintf.c:26:76: warning: left shift of negative value [-Wshift-negative-value]
+ #define EXTENDSIGN(n, l) (((~0 << (n)) >> (((n)*(l)) % BITSPERDIG)) & ~(~0 << (n)))
+                                                                            ^~
+sprintf.c:43:8: note: in expansion of macro ‘EXTENDSIGN’
+  *t |= EXTENDSIGN(3, strlen(t));
+        ^~~~~~~~~~
+sprintf.c: In function ‘rb_str_format’:
+sprintf.c:625:7: warning: this statement may fall through [-Wimplicit-fallthrough=]
+      p--;
+      ~^~
+sprintf.c:626:4: note: here
+    case '%':
+    ^~~~
+In file included from sprintf.c:1127:
+vsnprintf.c: In function ‘BSD_vfprintf’:
+vsnprintf.c:799:7: warning: this statement may fall through [-Wimplicit-fallthrough=]
+    if (prec != 0)
+       ^
+vsnprintf.c:801:3: note: here
+   case 'g':
+   ^~~~
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o st.o -c st.c
+st.c: In function ‘st_hash’:
+st.c:1091:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   t |= data_at(n) << CHAR_BIT*(n)
+   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+st.c:1068:25: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                         ^~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1093:3: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+   UNALIGNED_ADD_ALL;
+   ^~~~~~~~~~~~~~~~~
+st.c:1090:27: note: here
+ # define UNALIGNED_ADD(n) case SIZEOF_ST_INDEX_T - (n) - 1: \
+                           ^~~~
+st.c:1068:43: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                           ^~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1093:3: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+   UNALIGNED_ADD_ALL;
+   ^~~~~~~~~~~~~~~~~
+st.c:1091:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   t |= data_at(n) << CHAR_BIT*(n)
+   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+st.c:1068:43: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                           ^~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1093:3: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+   UNALIGNED_ADD_ALL;
+   ^~~~~~~~~~~~~~~~~
+st.c:1090:27: note: here
+ # define UNALIGNED_ADD(n) case SIZEOF_ST_INDEX_T - (n) - 1: \
+                           ^~~~
+st.c:1068:61: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                                             ^~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1093:3: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+   UNALIGNED_ADD_ALL;
+   ^~~~~~~~~~~~~~~~~
+st.c:1091:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   t |= data_at(n) << CHAR_BIT*(n)
+   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+st.c:1068:61: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                                             ^~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1093:3: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+   UNALIGNED_ADD_ALL;
+   ^~~~~~~~~~~~~~~~~
+st.c:1090:27: note: here
+ # define UNALIGNED_ADD(n) case SIZEOF_ST_INDEX_T - (n) - 1: \
+                           ^~~~
+st.c:1068:79: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                                                               ^~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1093:3: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+   UNALIGNED_ADD_ALL;
+   ^~~~~~~~~~~~~~~~~
+st.c:1091:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   t |= data_at(n) << CHAR_BIT*(n)
+   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+st.c:1068:79: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                                                               ^~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1093:3: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+   UNALIGNED_ADD_ALL;
+   ^~~~~~~~~~~~~~~~~
+st.c:1090:27: note: here
+ # define UNALIGNED_ADD(n) case SIZEOF_ST_INDEX_T - (n) - 1: \
+                           ^~~~
+st.c:1066:25: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_4 UNALIGNED_ADD(2); UNALIGNED_ADD(1); UNALIGNED_ADD(0)
+                         ^~~~~~~~~~~~~
+st.c:1068:97: note: in expansion of macro ‘UNALIGNED_ADD_4’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                                                                                 ^~~~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1093:3: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+   UNALIGNED_ADD_ALL;
+   ^~~~~~~~~~~~~~~~~
+st.c:1091:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   t |= data_at(n) << CHAR_BIT*(n)
+   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+st.c:1066:25: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_4 UNALIGNED_ADD(2); UNALIGNED_ADD(1); UNALIGNED_ADD(0)
+                         ^~~~~~~~~~~~~
+st.c:1068:97: note: in expansion of macro ‘UNALIGNED_ADD_4’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                                                                                 ^~~~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1093:3: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+   UNALIGNED_ADD_ALL;
+   ^~~~~~~~~~~~~~~~~
+st.c:1090:27: note: here
+ # define UNALIGNED_ADD(n) case SIZEOF_ST_INDEX_T - (n) - 1: \
+                           ^~~~
+st.c:1066:43: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_4 UNALIGNED_ADD(2); UNALIGNED_ADD(1); UNALIGNED_ADD(0)
+                                           ^~~~~~~~~~~~~
+st.c:1068:97: note: in expansion of macro ‘UNALIGNED_ADD_4’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                                                                                 ^~~~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1093:3: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+   UNALIGNED_ADD_ALL;
+   ^~~~~~~~~~~~~~~~~
+st.c:1091:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   t |= data_at(n) << CHAR_BIT*(n)
+   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+st.c:1066:43: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_4 UNALIGNED_ADD(2); UNALIGNED_ADD(1); UNALIGNED_ADD(0)
+                                           ^~~~~~~~~~~~~
+st.c:1068:97: note: in expansion of macro ‘UNALIGNED_ADD_4’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                                                                                 ^~~~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1093:3: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+   UNALIGNED_ADD_ALL;
+   ^~~~~~~~~~~~~~~~~
+st.c:1090:27: note: here
+ # define UNALIGNED_ADD(n) case SIZEOF_ST_INDEX_T - (n) - 1: \
+                           ^~~~
+st.c:1066:61: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_4 UNALIGNED_ADD(2); UNALIGNED_ADD(1); UNALIGNED_ADD(0)
+                                                             ^~~~~~~~~~~~~
+st.c:1068:97: note: in expansion of macro ‘UNALIGNED_ADD_4’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                                                                                 ^~~~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1093:3: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+   UNALIGNED_ADD_ALL;
+   ^~~~~~~~~~~~~~~~~
+st.c:1130:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   d |= data_at(n) << CHAR_BIT*(n)
+   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+st.c:1068:25: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                         ^~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1132:3: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+   UNALIGNED_ADD_ALL;
+   ^~~~~~~~~~~~~~~~~
+st.c:1129:27: note: here
+ # define UNALIGNED_ADD(n) case (n) + 1: \
+                           ^~~~
+st.c:1068:43: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                           ^~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1132:3: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+   UNALIGNED_ADD_ALL;
+   ^~~~~~~~~~~~~~~~~
+st.c:1130:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   d |= data_at(n) << CHAR_BIT*(n)
+   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+st.c:1068:43: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                           ^~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1132:3: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+   UNALIGNED_ADD_ALL;
+   ^~~~~~~~~~~~~~~~~
+st.c:1129:27: note: here
+ # define UNALIGNED_ADD(n) case (n) + 1: \
+                           ^~~~
+st.c:1068:61: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                                             ^~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1132:3: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+   UNALIGNED_ADD_ALL;
+   ^~~~~~~~~~~~~~~~~
+st.c:1130:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   d |= data_at(n) << CHAR_BIT*(n)
+   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+st.c:1068:61: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                                             ^~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1132:3: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+   UNALIGNED_ADD_ALL;
+   ^~~~~~~~~~~~~~~~~
+st.c:1129:27: note: here
+ # define UNALIGNED_ADD(n) case (n) + 1: \
+                           ^~~~
+st.c:1068:79: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                                                               ^~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1132:3: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+   UNALIGNED_ADD_ALL;
+   ^~~~~~~~~~~~~~~~~
+st.c:1130:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   d |= data_at(n) << CHAR_BIT*(n)
+   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+st.c:1068:79: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                                                               ^~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1132:3: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+   UNALIGNED_ADD_ALL;
+   ^~~~~~~~~~~~~~~~~
+st.c:1129:27: note: here
+ # define UNALIGNED_ADD(n) case (n) + 1: \
+                           ^~~~
+st.c:1066:25: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_4 UNALIGNED_ADD(2); UNALIGNED_ADD(1); UNALIGNED_ADD(0)
+                         ^~~~~~~~~~~~~
+st.c:1068:97: note: in expansion of macro ‘UNALIGNED_ADD_4’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                                                                                 ^~~~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1132:3: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+   UNALIGNED_ADD_ALL;
+   ^~~~~~~~~~~~~~~~~
+st.c:1130:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   d |= data_at(n) << CHAR_BIT*(n)
+   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+st.c:1066:25: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_4 UNALIGNED_ADD(2); UNALIGNED_ADD(1); UNALIGNED_ADD(0)
+                         ^~~~~~~~~~~~~
+st.c:1068:97: note: in expansion of macro ‘UNALIGNED_ADD_4’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                                                                                 ^~~~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1132:3: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+   UNALIGNED_ADD_ALL;
+   ^~~~~~~~~~~~~~~~~
+st.c:1129:27: note: here
+ # define UNALIGNED_ADD(n) case (n) + 1: \
+                           ^~~~
+st.c:1066:43: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_4 UNALIGNED_ADD(2); UNALIGNED_ADD(1); UNALIGNED_ADD(0)
+                                           ^~~~~~~~~~~~~
+st.c:1068:97: note: in expansion of macro ‘UNALIGNED_ADD_4’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                                                                                 ^~~~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1132:3: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+   UNALIGNED_ADD_ALL;
+   ^~~~~~~~~~~~~~~~~
+st.c:1130:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   d |= data_at(n) << CHAR_BIT*(n)
+   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+st.c:1066:43: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_4 UNALIGNED_ADD(2); UNALIGNED_ADD(1); UNALIGNED_ADD(0)
+                                           ^~~~~~~~~~~~~
+st.c:1068:97: note: in expansion of macro ‘UNALIGNED_ADD_4’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                                                                                 ^~~~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1132:3: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+   UNALIGNED_ADD_ALL;
+   ^~~~~~~~~~~~~~~~~
+st.c:1129:27: note: here
+ # define UNALIGNED_ADD(n) case (n) + 1: \
+                           ^~~~
+st.c:1066:61: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_4 UNALIGNED_ADD(2); UNALIGNED_ADD(1); UNALIGNED_ADD(0)
+                                                             ^~~~~~~~~~~~~
+st.c:1068:97: note: in expansion of macro ‘UNALIGNED_ADD_4’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                                                                                 ^~~~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1132:3: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+   UNALIGNED_ADD_ALL;
+   ^~~~~~~~~~~~~~~~~
+st.c:1166:4: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  t |= data_at(n) << CHAR_BIT*(n)
+  ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+st.c:1068:25: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                         ^~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1168:2: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+  UNALIGNED_ADD_ALL;
+  ^~~~~~~~~~~~~~~~~
+st.c:1165:27: note: here
+ # define UNALIGNED_ADD(n) case (n) + 1: \
+                           ^~~~
+st.c:1068:43: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                           ^~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1168:2: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+  UNALIGNED_ADD_ALL;
+  ^~~~~~~~~~~~~~~~~
+st.c:1166:4: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  t |= data_at(n) << CHAR_BIT*(n)
+  ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+st.c:1068:43: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                           ^~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1168:2: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+  UNALIGNED_ADD_ALL;
+  ^~~~~~~~~~~~~~~~~
+st.c:1165:27: note: here
+ # define UNALIGNED_ADD(n) case (n) + 1: \
+                           ^~~~
+st.c:1068:61: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                                             ^~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1168:2: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+  UNALIGNED_ADD_ALL;
+  ^~~~~~~~~~~~~~~~~
+st.c:1166:4: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  t |= data_at(n) << CHAR_BIT*(n)
+  ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+st.c:1068:61: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                                             ^~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1168:2: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+  UNALIGNED_ADD_ALL;
+  ^~~~~~~~~~~~~~~~~
+st.c:1165:27: note: here
+ # define UNALIGNED_ADD(n) case (n) + 1: \
+                           ^~~~
+st.c:1068:79: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                                                               ^~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1168:2: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+  UNALIGNED_ADD_ALL;
+  ^~~~~~~~~~~~~~~~~
+st.c:1166:4: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  t |= data_at(n) << CHAR_BIT*(n)
+  ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+st.c:1068:79: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                                                               ^~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1168:2: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+  UNALIGNED_ADD_ALL;
+  ^~~~~~~~~~~~~~~~~
+st.c:1165:27: note: here
+ # define UNALIGNED_ADD(n) case (n) + 1: \
+                           ^~~~
+st.c:1066:25: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_4 UNALIGNED_ADD(2); UNALIGNED_ADD(1); UNALIGNED_ADD(0)
+                         ^~~~~~~~~~~~~
+st.c:1068:97: note: in expansion of macro ‘UNALIGNED_ADD_4’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                                                                                 ^~~~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1168:2: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+  UNALIGNED_ADD_ALL;
+  ^~~~~~~~~~~~~~~~~
+st.c:1166:4: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  t |= data_at(n) << CHAR_BIT*(n)
+  ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+st.c:1066:25: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_4 UNALIGNED_ADD(2); UNALIGNED_ADD(1); UNALIGNED_ADD(0)
+                         ^~~~~~~~~~~~~
+st.c:1068:97: note: in expansion of macro ‘UNALIGNED_ADD_4’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                                                                                 ^~~~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1168:2: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+  UNALIGNED_ADD_ALL;
+  ^~~~~~~~~~~~~~~~~
+st.c:1165:27: note: here
+ # define UNALIGNED_ADD(n) case (n) + 1: \
+                           ^~~~
+st.c:1066:43: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_4 UNALIGNED_ADD(2); UNALIGNED_ADD(1); UNALIGNED_ADD(0)
+                                           ^~~~~~~~~~~~~
+st.c:1068:97: note: in expansion of macro ‘UNALIGNED_ADD_4’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                                                                                 ^~~~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1168:2: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+  UNALIGNED_ADD_ALL;
+  ^~~~~~~~~~~~~~~~~
+st.c:1166:4: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  t |= data_at(n) << CHAR_BIT*(n)
+  ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+st.c:1066:43: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_4 UNALIGNED_ADD(2); UNALIGNED_ADD(1); UNALIGNED_ADD(0)
+                                           ^~~~~~~~~~~~~
+st.c:1068:97: note: in expansion of macro ‘UNALIGNED_ADD_4’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                                                                                 ^~~~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1168:2: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+  UNALIGNED_ADD_ALL;
+  ^~~~~~~~~~~~~~~~~
+st.c:1165:27: note: here
+ # define UNALIGNED_ADD(n) case (n) + 1: \
+                           ^~~~
+st.c:1066:61: note: in expansion of macro ‘UNALIGNED_ADD’
+ #define UNALIGNED_ADD_4 UNALIGNED_ADD(2); UNALIGNED_ADD(1); UNALIGNED_ADD(0)
+                                                             ^~~~~~~~~~~~~
+st.c:1068:97: note: in expansion of macro ‘UNALIGNED_ADD_4’
+ #define UNALIGNED_ADD_8 UNALIGNED_ADD(6); UNALIGNED_ADD(5); UNALIGNED_ADD(4); UNALIGNED_ADD(3); UNALIGNED_ADD_4
+                                                                                                 ^~~~~~~~~~~~~~~
+st.c:1074:27: note: in expansion of macro ‘UNALIGNED_ADD_8’
+ #define UNALIGNED_ADD_ALL UNALIGNED_ADD_8
+                           ^~~~~~~~~~~~~~~
+st.c:1168:2: note: in expansion of macro ‘UNALIGNED_ADD_ALL’
+  UNALIGNED_ADD_ALL;
+  ^~~~~~~~~~~~~~~~~
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o strftime.o -c strftime.c
+strftime.c: In function ‘rb_strftime_with_timespec’:
+strftime.c:844:12: warning: this statement may fall through [-Wimplicit-fallthrough=]
+    padding = '0';
+    ~~~~~~~~^~~~~
+strftime.c:845:3: note: here
+   case '1':  case '2': case '3': case '4':
+   ^~~~
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o string.o -c string.c
+string.c: In function ‘rb_str_concat’:
+string.c:2019:19: warning: comparison is always false due to limited range of data type [-Wtype-limits]
+     if ((VALUE)lc > UINT_MAX) {
+                   ^
+In file included from string.c:14:
+string.c: In function ‘rb_str_casecmp’:
+./include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+string.c:2301:12: note: in expansion of macro ‘INT2FIX’
+     return INT2FIX(-1);
+            ^~~~~~~
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o struct.o -c struct.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o time.o -c time.c
+time.c: In function ‘timelocalw’:
+./include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+time.c:58:27: note: in definition of macro ‘lt’
+ #define lt(x,y) (cmp((x),(y)) < 0)
+                           ^
+./include/ruby/ruby.h:956:21: note: in expansion of macro ‘INT2FIX’
+ # define INT2NUM(v) INT2FIX((int)(v))
+                     ^~~~~~~
+time.c:1605:19: note: in expansion of macro ‘INT2NUM’
+         if (lt(v, INT2NUM(INT_MIN)) || lt(INT2NUM(INT_MAX), v))
+                   ^~~~~~~
+time.c: In function ‘validate_utc_offset’:
+./include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+time.c:60:27: note: in definition of macro ‘le’
+ #define le(x,y) (cmp((x),(y)) <= 0)
+                           ^
+time.c:2588:24: note: in expansion of macro ‘INT2FIX’
+     if (le(utc_offset, INT2FIX(-86400)) || ge(utc_offset, INT2FIX(86400)))
+                        ^~~~~~~
+In file included from time.c:12:
+time.c: In function ‘time_cmp’:
+./include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+time.c:3314:12: note: in expansion of macro ‘INT2FIX’
+     return INT2FIX(-1);
+            ^~~~~~~
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o transcode.o -c transcode.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o util.o -c util.c
+util.c: In function ‘ruby_strtod’:
+util.c:2108:18: warning: this statement may fall through [-Wimplicit-fallthrough=]
+             sign = 1;
+             ~~~~~^~~
+util.c:2110:11: note: here
+           case '+':
+           ^~~~
+util.c:2250:19: warning: this statement may fall through [-Wimplicit-fallthrough=]
+             esign = 1;
+             ~~~~~~^~~
+util.c:2251:11: note: here
+           case '+':
+           ^~~~
+util.c: In function ‘ruby_dtoa’:
+util.c:3421:19: warning: this statement may fall through [-Wimplicit-fallthrough=]
+         leftright = 0;
+         ~~~~~~~~~~^~~
+util.c:3423:7: note: here
+       case 4:
+       ^~~~
+util.c:3429:19: warning: this statement may fall through [-Wimplicit-fallthrough=]
+         leftright = 0;
+         ~~~~~~~~~~^~~
+util.c:3431:7: note: here
+       case 5:
+       ^~~~
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o variable.o -c variable.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o compile.o -c compile.c
+compile.c: In function ‘iseq_compile_each’:
+compile.c:3780:11: warning: this statement may fall through [-Wimplicit-fallthrough=]
+      boff = 1;
+      ~~~~~^~~
+compile.c:3781:4: note: here
+    default:
+    ^~~~~~~
+compile.c:4104:11: warning: this statement may fall through [-Wimplicit-fallthrough=]
+      flag |= VM_CALL_VCALL_BIT;
+compile.c:4106:4: note: here
+    case NODE_FCALL:
+    ^~~~
+compile.c: In function ‘defined_expr’:
+compile.c:2676:9: warning: this statement may fall through [-Wimplicit-fallthrough=]
+      if (node->nd_recv == (NODE *)1) break;
+         ^
+compile.c:2677:4: note: here
+    case NODE_CALL:
+    ^~~~
+compile.c:2593:23: warning: this statement may fall through [-Wimplicit-fallthrough=]
+       case NODE_ARRAY:{
+                       ^
+compile.c:2605:7: note: here
+       case NODE_STR:
+       ^~~~
+In file included from ./include/ruby/ruby.h:1343,
+                 from compile.c:12:
+compile.c: In function ‘insn_data_to_s_detail’:
+./include/ruby/intern.h:724:42: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ #define rb_str_cat2(str, ptr) __extension__ ( \
+                                             ~~~
+ {      \
+ ~~~~~~~~                                  
+     (__builtin_constant_p(ptr)) ?         \
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  rb_str_cat(str, ptr, (long)strlen(ptr)) : \
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+  rb_str_cat2(str, ptr);   \
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~               
+ })
+ ~~                                        
+compile.c:5055:7: note: in expansion of macro ‘rb_str_cat2’
+       rb_str_cat2(str, rb_id2name(entry->id));
+       ^~~~~~~~~~~
+compile.c:5057:8: note: here
+        case TS_IC: /* method cache */
+        ^~~~
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o debug.o -c debug.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o iseq.o -c iseq.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o vm.o -c vm.c
+iseq.c: In function ‘insn_operand_intern’:
+iseq.c:781:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  op = ID2SYM(op);
+iseq.c:783:7: note: here
+       case TS_VALUE:  /* VALUE */
+       ^~~~
+In file included from vm.c:16:
+vm_insnhelper.c: In function ‘vm_throw’:
+vm_core.h:562:36: warning: left shift of negative value [-Wshift-negative-value]
+ #define VM_FRAME_MAGIC_MASK   (~(~0<<VM_FRAME_MAGIC_MASK_BITS))
+                                    ^~
+vm_core.h:564:43: note: in expansion of macro ‘VM_FRAME_MAGIC_MASK’
+ #define VM_FRAME_TYPE(cfp) ((cfp)->flag & VM_FRAME_MAGIC_MASK)
+                                           ^~~~~~~~~~~~~~~~~~~
+vm_insnhelper.c:1481:7: note: in expansion of macro ‘VM_FRAME_TYPE’
+   if (VM_FRAME_TYPE(cfp) == VM_FRAME_MAGIC_LAMBDA) {
+       ^~~~~~~~~~~~~
+vm_core.h:562:36: warning: left shift of negative value [-Wshift-negative-value]
+ #define VM_FRAME_MAGIC_MASK   (~(~0<<VM_FRAME_MAGIC_MASK_BITS))
+                                    ^~
+vm_core.h:564:43: note: in expansion of macro ‘VM_FRAME_MAGIC_MASK’
+ #define VM_FRAME_TYPE(cfp) ((cfp)->flag & VM_FRAME_MAGIC_MASK)
+                                           ^~~~~~~~~~~~~~~~~~~
+vm_insnhelper.c:1546:8: note: in expansion of macro ‘VM_FRAME_TYPE’
+    if (VM_FRAME_TYPE(cfp) == VM_FRAME_MAGIC_LAMBDA) {
+        ^~~~~~~~~~~~~
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o vm_dump.o -c vm_dump.c
+vm_eval.c: In function ‘rb_iterate’:
+vm_core.h:562:36: warning: left shift of negative value [-Wshift-negative-value]
+ #define VM_FRAME_MAGIC_MASK   (~(~0<<VM_FRAME_MAGIC_MASK_BITS))
+                                    ^~
+vm_core.h:107:40: note: in definition of macro ‘UNLIKELY’
+ #define UNLIKELY(x) (__builtin_expect((x), 0))
+                                        ^
+vm_core.h:564:43: note: in expansion of macro ‘VM_FRAME_MAGIC_MASK’
+ #define VM_FRAME_TYPE(cfp) ((cfp)->flag & VM_FRAME_MAGIC_MASK)
+                                           ^~~~~~~~~~~~~~~~~~~
+vm_eval.c:879:20: note: in expansion of macro ‘VM_FRAME_TYPE’
+       if (UNLIKELY(VM_FRAME_TYPE(th->cfp) == VM_FRAME_MAGIC_CFUNC)) {
+                    ^~~~~~~~~~~~~
+In file included from vm.c:26:
+vm_eval.c: In function ‘rb_eval_string_protect’:
+vm_eval.c:1131:23: warning: cast between incompatible function types from ‘VALUE (*)(const char *)’ {aka ‘long unsigned int (*)(const char *)’} to ‘VALUE (*)(VALUE)’ {aka ‘long unsigned int (*)(long unsigned int)’} [-Wcast-function-type]
+     return rb_protect((VALUE (*)(VALUE))rb_eval_string, (VALUE)str, state);
+                       ^
+In file included from vm.c:16:
+vm.c: In function ‘rb_vm_make_env_object’:
+vm_core.h:562:36: warning: left shift of negative value [-Wshift-negative-value]
+ #define VM_FRAME_MAGIC_MASK   (~(~0<<VM_FRAME_MAGIC_MASK_BITS))
+                                    ^~
+vm_core.h:564:43: note: in expansion of macro ‘VM_FRAME_MAGIC_MASK’
+ #define VM_FRAME_TYPE(cfp) ((cfp)->flag & VM_FRAME_MAGIC_MASK)
+                                           ^~~~~~~~~~~~~~~~~~~
+vm.c:427:9: note: in expansion of macro ‘VM_FRAME_TYPE’
+     if (VM_FRAME_TYPE(cfp) == VM_FRAME_MAGIC_FINISH) {
+         ^~~~~~~~~~~~~
+In file included from vm_dump.c:13:
+vm_dump.c: In function ‘control_frame_dump’:
+vm_core.h:562:36: warning: left shift of negative value [-Wshift-negative-value]
+ #define VM_FRAME_MAGIC_MASK   (~(~0<<VM_FRAME_MAGIC_MASK_BITS))
+                                    ^~
+vm_core.h:564:43: note: in expansion of macro ‘VM_FRAME_MAGIC_MASK’
+ #define VM_FRAME_TYPE(cfp) ((cfp)->flag & VM_FRAME_MAGIC_MASK)
+                                           ^~~~~~~~~~~~~~~~~~~
+vm_dump.c:50:13: note: in expansion of macro ‘VM_FRAME_TYPE’
+     switch (VM_FRAME_TYPE(cfp)) {
+             ^~~~~~~~~~~~~
+vm.c: In function ‘vm_backtrace_each’:
+vm_core.h:562:36: warning: left shift of negative value [-Wshift-negative-value]
+ #define VM_FRAME_MAGIC_MASK   (~(~0<<VM_FRAME_MAGIC_MASK_BITS))
+                                    ^~
+vm_core.h:564:43: note: in expansion of macro ‘VM_FRAME_MAGIC_MASK’
+ #define VM_FRAME_TYPE(cfp) ((cfp)->flag & VM_FRAME_MAGIC_MASK)
+                                           ^~~~~~~~~~~~~~~~~~~
+vm_core.h:570:4: note: in expansion of macro ‘VM_FRAME_TYPE’
+   (VM_FRAME_TYPE(cfp) == VM_FRAME_MAGIC_CFUNC)
+    ^~~~~~~~~~~~~
+vm.c:736:11: note: in expansion of macro ‘RUBYVM_CFUNC_FRAME_P’
+  else if (RUBYVM_CFUNC_FRAME_P(cfp)) {
+           ^~~~~~~~~~~~~~~~~~~~
+vm_dump.c: In function ‘rb_vmdebug_debug_print_pre’:
+vm_core.h:562:36: warning: left shift of negative value [-Wshift-negative-value]
+ #define VM_FRAME_MAGIC_MASK   (~(~0<<VM_FRAME_MAGIC_MASK_BITS))
+                                    ^~
+vm_core.h:564:43: note: in expansion of macro ‘VM_FRAME_MAGIC_MASK’
+ #define VM_FRAME_TYPE(cfp) ((cfp)->flag & VM_FRAME_MAGIC_MASK)
+                                           ^~~~~~~~~~~~~~~~~~~
+vm_dump.c:363:22: note: in expansion of macro ‘VM_FRAME_TYPE’
+     if (iseq != 0 && VM_FRAME_TYPE(cfp) != VM_FRAME_MAGIC_FINISH) {
+                      ^~~~~~~~~~~~~
+vm.c: In function ‘vm_exec’:
+vm_core.h:562:36: warning: left shift of negative value [-Wshift-negative-value]
+ #define VM_FRAME_MAGIC_MASK   (~(~0<<VM_FRAME_MAGIC_MASK_BITS))
+                                    ^~
+vm_core.h:107:40: note: in definition of macro ‘UNLIKELY’
+ #define UNLIKELY(x) (__builtin_expect((x), 0))
+                                        ^
+vm_core.h:564:43: note: in expansion of macro ‘VM_FRAME_MAGIC_MASK’
+ #define VM_FRAME_TYPE(cfp) ((cfp)->flag & VM_FRAME_MAGIC_MASK)
+                                           ^~~~~~~~~~~~~~~~~~~
+vm.c:1168:19: note: in expansion of macro ‘VM_FRAME_TYPE’
+      if (UNLIKELY(VM_FRAME_TYPE(th->cfp) == VM_FRAME_MAGIC_CFUNC)) {
+                   ^~~~~~~~~~~~~
+vm_core.h:562:36: warning: left shift of negative value [-Wshift-negative-value]
+ #define VM_FRAME_MAGIC_MASK   (~(~0<<VM_FRAME_MAGIC_MASK_BITS))
+                                    ^~
+vm_core.h:564:43: note: in expansion of macro ‘VM_FRAME_MAGIC_MASK’
+ #define VM_FRAME_TYPE(cfp) ((cfp)->flag & VM_FRAME_MAGIC_MASK)
+                                           ^~~~~~~~~~~~~~~~~~~
+vm.c:1336:14: note: in expansion of macro ‘VM_FRAME_TYPE’
+      switch (VM_FRAME_TYPE(th->cfp)) {
+              ^~~~~~~~~~~~~
+vm_core.h:562:36: warning: left shift of negative value [-Wshift-negative-value]
+ #define VM_FRAME_MAGIC_MASK   (~(~0<<VM_FRAME_MAGIC_MASK_BITS))
+                                    ^~
+vm_core.h:564:43: note: in expansion of macro ‘VM_FRAME_MAGIC_MASK’
+ #define VM_FRAME_TYPE(cfp) ((cfp)->flag & VM_FRAME_MAGIC_MASK)
+                                           ^~~~~~~~~~~~~~~~~~~
+vm.c:1347:10: note: in expansion of macro ‘VM_FRAME_TYPE’
+      if (VM_FRAME_TYPE(th->cfp) != VM_FRAME_MAGIC_FINISH) {
+          ^~~~~~~~~~~~~
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o thread.o -c thread.c
+thread.c: In function ‘rb_threadptr_execute_interrupts_rec’:
+thread.c:1268:20: warning: implicit declaration of function ‘rb_get_next_signal’; did you mean ‘ruby_default_signal’? [-Wimplicit-function-declaration]
+      while ((sig = rb_get_next_signal()) != 0) {
+                    ^~~~~~~~~~~~~~~~~~
+                    ruby_default_signal
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o cont.o -c cont.c
+thread.c: In function ‘exec_recursive_i.constprop’:
+thread.c:3599:11: warning: variable ‘result’ might be clobbered by ‘longjmp’ or ‘vfork’ [-Wclobbered]
+     VALUE result = Qundef;
+           ^~~~~~
+thread.c: In function ‘exec_recursive_i’:
+thread.c:3599:11: warning: variable ‘result’ might be clobbered by ‘longjmp’ or ‘vfork’ [-Wclobbered]
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o ascii.o -c ./enc/ascii.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o us_ascii.o -c ./enc/us_ascii.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o unicode.o -c ./enc/unicode.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o utf_8.o -c ./enc/utf_8.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o newline.o -c newline.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o strlcpy.o -c ./missing/strlcpy.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o strlcat.o -c ./missing/strlcat.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o dmyext.o -c dmyext.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o encoding.o -c encoding.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o dmydln.o -c dmydln.c
+encoding.c: In function ‘rb_enc_get_index’:
+encoding.c:659:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if (NIL_P(obj)) break;
+     ^
+encoding.c:660:7: note: here
+       case T_DATA:
+       ^~~~
+encoding.c: In function ‘enc_capable’:
+encoding.c:619:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if (is_data_encoding(obj)) return TRUE;
+     ^
+encoding.c:620:7: note: here
+       default:
+       ^~~~~~~
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o dmyversion.o -c dmyversion.c
+In file included from vm.c:26:
+vm_eval.c: In function ‘eval_string_with_cref’:
+vm_eval.c:956:19: warning: variable ‘bind’ might be clobbered by ‘longjmp’ or ‘vfork’ [-Wclobbered]
+     rb_binding_t *bind = 0;
+                   ^~~~
+vm_eval.c: In function ‘rb_eval_cmd’:
+vm_eval.c:1165:11: warning: variable ‘val’ might be clobbered by ‘longjmp’ or ‘vfork’ [-Wclobbered]
+     VALUE val = Qnil;  /* OK */
+           ^~~
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -L.  -rdynamic -Wl,-export-dynamic   main.o dmydln.o dmyencoding.o dmyversion.o miniprelude.o array.o bignum.o class.o compar.o complex.o dir.o dln_find.o enum.o enumerator.o error.o eval.o load.o proc.o file.o gc.o hash.o inits.o io.o marshal.o math.o node.o numeric.o object.o pack.o parse.o process.o random.o range.o rational.o re.o regcomp.o regenc.o regerror.o regexec.o regparse.o regsyntax.o ruby.o safe.o signal.o sprintf.o st.o strftime.o string.o struct.o time.o transcode.o util.o variable.o compile.o debug.o iseq.o vm.o vm_dump.o thread.o cont.o ascii.o us_ascii.o unicode.o utf_8.o newline.o strlcpy.o strlcat.o  dmyext.o -lpthread -lrt -ldl -lcrypt -lm   -o miniruby
+./miniruby -I./lib -I.ext/common -I./- -r./ext/purelib.rb  ./tool/generic_erb.rb -c -o encdb.h ./template/encdb.h.tmpl ./enc enc
+rbconfig.rb updated
+./miniruby -I./lib -I.ext/common -I./- -r./ext/purelib.rb  ./enc/make_encmake.rb --builtin-encs="ascii.o us_ascii.o unicode.o utf_8.o" --builtin-transes="newline.o" enc.mk 
+./miniruby -I./lib -I.ext/common -I./- -r./ext/purelib.rb  -I. ./tool/compile_prelude.rb ./prelude.rb ./enc/prelude.rb ./gem_prelude.rb prelude.c
+gcc -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -I. -I.ext/include/x86_64-linux -I./include -I. -DRUBY_EXPORT   -o prelude.o -c prelude.c
+encdb.h unchanged
+make -f enc.mk RUBY="./miniruby -I./lib -I.ext/common -I./- -r./ext/purelib.rb " MINIRUBY="./miniruby -I./lib -I.ext/common -I./- -r./ext/purelib.rb " -j4 --jobserver-auth=4,5 srcs
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330'
+make[1]: Nothing to be done for 'srcs'.
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330'
+./miniruby -I./lib -I.ext/common -I./- -r./ext/purelib.rb  ./tool/generic_erb.rb -c -o transdb.h ./template/transdb.h.tmpl ./enc/trans enc/trans
+ar rcu libruby-static.a dln.o encoding.o version.o array.o bignum.o class.o compar.o complex.o dir.o dln_find.o enum.o enumerator.o error.o eval.o load.o proc.o file.o gc.o hash.o inits.o io.o marshal.o math.o node.o numeric.o object.o pack.o parse.o process.o random.o range.o rational.o re.o regcomp.o regenc.o regerror.o regexec.o regparse.o regsyntax.o ruby.o safe.o signal.o sprintf.o st.o strftime.o string.o struct.o time.o transcode.o util.o variable.o compile.o debug.o iseq.o vm.o vm_dump.o thread.o cont.o ascii.o us_ascii.o unicode.o utf_8.o newline.o strlcpy.o strlcat.o  prelude.o dmyext.o
+gcc -shared -Wl,-soname,libruby.so.1.9   dln.o encoding.o version.o array.o bignum.o class.o compar.o complex.o dir.o dln_find.o enum.o enumerator.o error.o eval.o load.o proc.o file.o gc.o hash.o inits.o io.o marshal.o math.o node.o numeric.o object.o pack.o parse.o process.o random.o range.o rational.o re.o regcomp.o regenc.o regerror.o regexec.o regparse.o regsyntax.o ruby.o safe.o signal.o sprintf.o st.o strftime.o string.o struct.o time.o transcode.o util.o variable.o compile.o debug.o iseq.o vm.o vm_dump.o thread.o cont.o ascii.o us_ascii.o unicode.o utf_8.o newline.o strlcpy.o strlcat.o  prelude.o dmyext.o -lpthread -lrt -ldl -lcrypt -lm   -o libruby.so.1.9.1
+transdb.h unchanged
+objcopy -w -L 'Init_*' -L '*_threadptr_*' libruby.so.1.9.1
+make -f enc.mk RUBY="./miniruby -I./lib -I.ext/common -I./- -r./ext/purelib.rb " MINIRUBY="./miniruby -I./lib -I.ext/common -I./- -r./ext/purelib.rb " -j4 --jobserver-auth=4,5 enc
+make -f enc.mk RUBY="./miniruby -I./lib -I.ext/common -I./- -r./ext/purelib.rb " MINIRUBY="./miniruby -I./lib -I.ext/common -I./- -r./ext/purelib.rb " -j4 --jobserver-auth=4,5 trans
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330'
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330'
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/encdb.o -c ./enc/encdb.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/trans/transdb.o -c ./enc/trans/transdb.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/trans/big5.o -c ./enc/trans/big5.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/big5.o -c ./enc/big5.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/trans/chinese.o -c ./enc/trans/chinese.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/cp949.o -c ./enc/cp949.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/emacs_mule.o -c ./enc/emacs_mule.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/trans/emoji.o -c ./enc/trans/emoji.c
+compiling -test-/bug-3662
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/-test-/bug-3662'
+/bin/mkdir -p ../../../.ext/x86_64-linux/-test-/bug-3662
+gcc -I. -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/-test-/bug-3662 -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o bug.o -c bug.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/trans/emoji_iso2022_kddi.o -c ./enc/trans/emoji_iso2022_kddi.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/euc_jp.o -c ./enc/euc_jp.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/euc_kr.o -c ./enc/euc_kr.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/euc_tw.o -c ./enc/euc_tw.c
+gcc -shared -o ../../../.ext/x86_64-linux/-test-/bug-3662/bug.so bug.o -L. -L../../.. -L.  -rdynamic -Wl,-export-dynamic   -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby  -lpthread -lrt -ldl -lcrypt -lm   -lc
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/gb2312.o -c ./enc/gb2312.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/gb18030.o -c ./enc/gb18030.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/gbk.o -c ./enc/gbk.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/iso_8859_1.o -c ./enc/iso_8859_1.c
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/-test-/bug-3662'
+compiling -test-/string
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/iso_8859_2.o -c ./enc/iso_8859_2.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/trans/emoji_sjis_docomo.o -c ./enc/trans/emoji_sjis_docomo.c
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/-test-/string'
+/bin/mkdir -p ../../../.ext/x86_64-linux/-test-/string
+gcc -I. -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/-test-/string -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o init.o -c init.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/iso_8859_3.o -c ./enc/iso_8859_3.c
+gcc -I. -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/-test-/string -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o cstr.o -c cstr.c
+gcc -I. -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/-test-/string -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o set_len.o -c set_len.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/iso_8859_4.o -c ./enc/iso_8859_4.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/iso_8859_5.o -c ./enc/iso_8859_5.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/iso_8859_6.o -c ./enc/iso_8859_6.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/iso_8859_7.o -c ./enc/iso_8859_7.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/iso_8859_8.o -c ./enc/iso_8859_8.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/iso_8859_9.o -c ./enc/iso_8859_9.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/iso_8859_10.o -c ./enc/iso_8859_10.c
+gcc -shared -o ../../../.ext/x86_64-linux/-test-/string/string.so init.o cstr.o set_len.o -L. -L../../.. -L.  -rdynamic -Wl,-export-dynamic   -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby  -lpthread -lrt -ldl -lcrypt -lm   -lc
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/iso_8859_11.o -c ./enc/iso_8859_11.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/iso_8859_13.o -c ./enc/iso_8859_13.c
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/-test-/string'
+compiling bigdecimal
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/iso_8859_14.o -c ./enc/iso_8859_14.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/iso_8859_15.o -c ./enc/iso_8859_15.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/trans/emoji_sjis_kddi.o -c ./enc/trans/emoji_sjis_kddi.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/iso_8859_16.o -c ./enc/iso_8859_16.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/koi8_r.o -c ./enc/koi8_r.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/koi8_u.o -c ./enc/koi8_u.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/shift_jis.o -c ./enc/shift_jis.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/utf_16be.o -c ./enc/utf_16be.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/utf_16le.o -c ./enc/utf_16le.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/utf_32be.o -c ./enc/utf_32be.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/trans/emoji_sjis_softbank.o -c ./enc/trans/emoji_sjis_softbank.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/utf_32le.o -c ./enc/utf_32le.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/windows_1251.o -c ./enc/windows_1251.c
+gcc -shared -o .ext/x86_64-linux/enc/encdb.so enc/encdb.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/big5.so enc/big5.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/trans/escape.o -c ./enc/trans/escape.c
+gcc -shared -o .ext/x86_64-linux/enc/cp949.so enc/cp949.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/trans/gb18030.o -c ./enc/trans/gb18030.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/trans/gbk.o -c ./enc/trans/gbk.c
+gcc -shared -o .ext/x86_64-linux/enc/emacs_mule.so enc/emacs_mule.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/euc_jp.so enc/euc_jp.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/euc_kr.so enc/euc_kr.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/euc_tw.so enc/euc_tw.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/gb2312.so enc/gb2312.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/gb18030.so enc/gb18030.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/gbk.so enc/gbk.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/iso_8859_1.so enc/iso_8859_1.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/iso_8859_2.so enc/iso_8859_2.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/iso_8859_3.so enc/iso_8859_3.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/trans/iso2022.o -c ./enc/trans/iso2022.c
+gcc -shared -o .ext/x86_64-linux/enc/iso_8859_4.so enc/iso_8859_4.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/iso_8859_5.so enc/iso_8859_5.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/iso_8859_6.so enc/iso_8859_6.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/iso_8859_7.so enc/iso_8859_7.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/trans/japanese.o -c ./enc/trans/japanese.c
+gcc -shared -o .ext/x86_64-linux/enc/iso_8859_8.so enc/iso_8859_8.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/iso_8859_9.so enc/iso_8859_9.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/trans/japanese_euc.o -c ./enc/trans/japanese_euc.c
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/bigdecimal'
+gcc -I. -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/bigdecimal -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o bigdecimal.o -c bigdecimal.c
+/bin/mkdir -p ../../.ext/common/bigdecimal
+gcc -shared -o .ext/x86_64-linux/enc/iso_8859_10.so enc/iso_8859_10.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+cp ../.././ext/bigdecimal/lib/bigdecimal/util.rb ../../.ext/common/bigdecimal
+gcc -shared -o .ext/x86_64-linux/enc/iso_8859_11.so enc/iso_8859_11.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/trans/japanese_sjis.o -c ./enc/trans/japanese_sjis.c
+gcc -shared -o .ext/x86_64-linux/enc/iso_8859_13.so enc/iso_8859_13.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+cp ../.././ext/bigdecimal/lib/bigdecimal/newton.rb ../../.ext/common/bigdecimal
+gcc -shared -o .ext/x86_64-linux/enc/iso_8859_14.so enc/iso_8859_14.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+cp ../.././ext/bigdecimal/lib/bigdecimal/ludcmp.rb ../../.ext/common/bigdecimal
+cp ../.././ext/bigdecimal/lib/bigdecimal/math.rb ../../.ext/common/bigdecimal
+cp ../.././ext/bigdecimal/lib/bigdecimal/jacobian.rb ../../.ext/common/bigdecimal
+In file included from bigdecimal.c:16:
+bigdecimal.c: In function ‘BigDecimal_IsInfinite’:
+../.././include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+bigdecimal.c:450:30: note: in expansion of macro ‘INT2FIX’
+     if(VpIsNegInf(p)) return INT2FIX(-1);
+                              ^~~~~~~
+bigdecimal.c: In function ‘BigDecimal_to_i’:
+../.././include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+bigdecimal.c:506:48: note: in expansion of macro ‘INT2FIX’
+      numerator = rb_funcall(numerator, '*', 1, INT2FIX(-1));
+                                                ^~~~~~~
+bigdecimal.c: In function ‘BigDecimal_to_r’:
+../.././include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+bigdecimal.c:571:44: note: in expansion of macro ‘INT2FIX’
+  numerator = rb_funcall(numerator, '*', 1, INT2FIX(-1));
+                                            ^~~~~~~
+bigdecimal.c: In function ‘Init_bigdecimal’:
+../.././include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+bigdecimal.c:2012:58: note: in expansion of macro ‘INT2FIX’
+     rb_define_const(rb_cBigDecimal, "SIGN_NEGATIVE_ZERO",INT2FIX(VP_SIGN_NEGATIVE_ZERO));
+                                                          ^~~~~~~
+../.././include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+bigdecimal.c:2018:60: note: in expansion of macro ‘INT2FIX’
+     rb_define_const(rb_cBigDecimal, "SIGN_NEGATIVE_FINITE",INT2FIX(VP_SIGN_NEGATIVE_FINITE));
+                                                            ^~~~~~~
+../.././include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+bigdecimal.c:2024:62: note: in expansion of macro ‘INT2FIX’
+     rb_define_const(rb_cBigDecimal, "SIGN_NEGATIVE_INFINITE",INT2FIX(VP_SIGN_NEGATIVE_INFINITE));
+                                                              ^~~~~~~
+gcc -shared -o .ext/x86_64-linux/enc/iso_8859_15.so enc/iso_8859_15.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/iso_8859_16.so enc/iso_8859_16.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/koi8_r.so enc/koi8_r.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/koi8_u.so enc/koi8_u.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/trans/korean.o -c ./enc/trans/korean.c
+gcc -shared -o .ext/x86_64-linux/enc/shift_jis.so enc/shift_jis.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/utf_16be.so enc/utf_16be.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/trans/single_byte.o -c ./enc/trans/single_byte.c
+gcc -shared -o .ext/x86_64-linux/enc/utf_16le.so enc/utf_16le.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/utf_32be.so enc/utf_32be.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/utf_32le.so enc/utf_32le.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/windows_1251.so enc/windows_1251.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330'
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/trans/utf8_mac.o -c ./enc/trans/utf8_mac.c
+gcc -I. -I.ext/include/x86_64-linux -I./include -I.   -DONIG_ENC_REGISTER=rb_enc_register -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o enc/trans/utf_16_32.o -c ./enc/trans/utf_16_32.c
+gcc -shared -o .ext/x86_64-linux/enc/trans/transdb.so enc/trans/transdb.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/trans/big5.so enc/trans/big5.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/trans/chinese.so enc/trans/chinese.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/trans/emoji.so enc/trans/emoji.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/trans/emoji_iso2022_kddi.so enc/trans/emoji_iso2022_kddi.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/trans/emoji_sjis_docomo.so enc/trans/emoji_sjis_docomo.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/trans/emoji_sjis_kddi.so enc/trans/emoji_sjis_kddi.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/trans/emoji_sjis_softbank.so enc/trans/emoji_sjis_softbank.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/trans/escape.so enc/trans/escape.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/trans/gb18030.so enc/trans/gb18030.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/trans/gbk.so enc/trans/gbk.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/trans/iso2022.so enc/trans/iso2022.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/trans/japanese.so enc/trans/japanese.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/trans/japanese_euc.so enc/trans/japanese_euc.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/trans/japanese_sjis.so enc/trans/japanese_sjis.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/trans/single_byte.so enc/trans/single_byte.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/trans/utf8_mac.so enc/trans/utf8_mac.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/trans/utf_16_32.so enc/trans/utf_16_32.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+gcc -shared -o .ext/x86_64-linux/enc/trans/korean.so enc/trans/korean.o -L. -L. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lpthread -lrt -ldl -lcrypt -lm  
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330'
+make -f enc.mk RUBY="./miniruby -I./lib -I.ext/common -I./- -r./ext/purelib.rb " MINIRUBY="./miniruby -I./lib -I.ext/common -I./- -r./ext/purelib.rb " -j4 --jobserver-auth=4,5 encs
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330'
+/bin/mkdir -p .ext/x86_64-linux/enc .ext/x86_64-linux/enc/trans enc enc/trans
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330'
+gcc -shared -o ../../.ext/x86_64-linux/bigdecimal.so bigdecimal.o -L. -L../.. -L.  -rdynamic -Wl,-export-dynamic   -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby  -lpthread -lrt -ldl -lcrypt -lm   -lc
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/bigdecimal'
+compiling continuation
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/continuation'
+gcc -I. -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/continuation -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o continuation.o -c continuation.c
+gcc -shared -o ../../.ext/x86_64-linux/continuation.so continuation.o -L. -L../.. -L.  -rdynamic -Wl,-export-dynamic   -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby  -lpthread -lrt -ldl -lcrypt -lm   -lc
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/continuation'
+compiling coverage
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/coverage'
+gcc -I. -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/coverage -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o coverage.o -c coverage.c
+gcc -shared -o ../../.ext/x86_64-linux/coverage.so coverage.o -L. -L../.. -L.  -rdynamic -Wl,-export-dynamic   -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby  -lpthread -lrt -ldl -lcrypt -lm   -lc
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/coverage'
+compiling curses
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/curses'
+gcc -I. -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/curses -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o curses.o -c curses.c
+gcc -shared -o ../../.ext/x86_64-linux/curses.so curses.o -L. -L../.. -L.  -rdynamic -Wl,-export-dynamic   -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lncursesw -ltinfo  -lpthread -lrt -ldl -lcrypt -lm   -lc
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/curses'
+compiling dbm
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/dbm'
+gcc -I. -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/dbm -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o dbm.o -c dbm.c
+gcc -shared -o ../../.ext/x86_64-linux/dbm.so dbm.o -L. -L../.. -L.  -rdynamic -Wl,-export-dynamic   -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -ldb  -lpthread -lrt -ldl -lcrypt -lm   -lc
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/dbm'
+compiling digest
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/digest'
+gcc -I. -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/digest -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o digest.o -c digest.c
+/bin/mkdir -p ../../.ext/include/ruby
+/bin/mkdir -p ../../.ext/common/digest
+cp ../.././ext/digest/lib/digest.rb ../../.ext/common
+cp ../.././ext/digest/lib/digest/hmac.rb ../../.ext/common/digest
+cp ../.././ext/digest/digest.h ../../.ext/include/ruby
+gcc -shared -o ../../.ext/x86_64-linux/digest.so digest.o -L. -L../.. -L.  -rdynamic -Wl,-export-dynamic   -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby  -lpthread -lrt -ldl -lcrypt -lm   -lc
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/digest'
+compiling digest/bubblebabble
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/digest/bubblebabble'
+/bin/mkdir -p ../../../.ext/x86_64-linux/digest
+gcc -I. -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/digest/bubblebabble -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o bubblebabble.o -c bubblebabble.c
+gcc -shared -o ../../../.ext/x86_64-linux/digest/bubblebabble.so bubblebabble.o -L. -L../../.. -L.  -rdynamic -Wl,-export-dynamic   -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby  -lpthread -lrt -ldl -lcrypt -lm   -lc
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/digest/bubblebabble'
+compiling digest/md5
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/digest/md5'
+gcc -I. -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/digest/md5 -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o md5init.o -c md5init.c
+gcc -I. -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/digest/md5 -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o md5ossl.o -c md5ossl.c
+md5init.c:16:5: warning: cast between incompatible function types from ‘int (*)(MD5_CTX *)’ {aka ‘int (*)(struct MD5state_st *)’} to ‘void (*)(void *)’ [-Wcast-function-type]
+     (rb_digest_hash_init_func_t)MD5_Init,
+     ^
+md5init.c:17:5: warning: cast between incompatible function types from ‘int (*)(MD5_CTX *, const void *, size_t)’ {aka ‘int (*)(struct MD5state_st *, const void *, long unsigned int)’} to ‘void (*)(void *, unsigned char *, size_t)’ {aka ‘void (*)(void *, unsigned char *, long unsigned int)’} [-Wcast-function-type]
+     (rb_digest_hash_update_func_t)MD5_Update,
+     ^
+gcc -shared -o ../../../.ext/x86_64-linux/digest/md5.so md5init.o md5ossl.o -L. -L../../.. -L.  -rdynamic -Wl,-export-dynamic   -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lcrypto  -lpthread -lrt -ldl -lcrypt -lm   -lc
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/digest/md5'
+compiling digest/rmd160
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/digest/rmd160'
+gcc -I. -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/digest/rmd160 -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o rmd160init.o -c rmd160init.c
+gcc -I. -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/digest/rmd160 -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o rmd160ossl.o -c rmd160ossl.c
+rmd160init.c:16:5: warning: cast between incompatible function types from ‘int (*)(RIPEMD160_CTX *)’ {aka ‘int (*)(struct RIPEMD160state_st *)’} to ‘void (*)(void *)’ [-Wcast-function-type]
+     (rb_digest_hash_init_func_t)RMD160_Init,
+     ^
+rmd160init.c:17:5: warning: cast between incompatible function types from ‘int (*)(RIPEMD160_CTX *, const void *, size_t)’ {aka ‘int (*)(struct RIPEMD160state_st *, const void *, long unsigned int)’} to ‘void (*)(void *, unsigned char *, size_t)’ {aka ‘void (*)(void *, unsigned char *, long unsigned int)’} [-Wcast-function-type]
+     (rb_digest_hash_update_func_t)RMD160_Update,
+     ^
+gcc -shared -o ../../../.ext/x86_64-linux/digest/rmd160.so rmd160init.o rmd160ossl.o -L. -L../../.. -L.  -rdynamic -Wl,-export-dynamic   -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lcrypto  -lpthread -lrt -ldl -lcrypt -lm   -lc
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/digest/rmd160'
+compiling digest/sha1
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/digest/sha1'
+gcc -I. -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/digest/sha1 -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o sha1init.o -c sha1init.c
+gcc -I. -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/digest/sha1 -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o sha1ossl.o -c sha1ossl.c
+sha1init.c:16:5: warning: cast between incompatible function types from ‘int (*)(SHA_CTX *)’ {aka ‘int (*)(struct SHAstate_st *)’} to ‘void (*)(void *)’ [-Wcast-function-type]
+     (rb_digest_hash_init_func_t)SHA1_Init,
+     ^
+sha1init.c:17:5: warning: cast between incompatible function types from ‘int (*)(SHA_CTX *, const void *, size_t)’ {aka ‘int (*)(struct SHAstate_st *, const void *, long unsigned int)’} to ‘void (*)(void *, unsigned char *, size_t)’ {aka ‘void (*)(void *, unsigned char *, long unsigned int)’} [-Wcast-function-type]
+     (rb_digest_hash_update_func_t)SHA1_Update,
+     ^
+gcc -shared -o ../../../.ext/x86_64-linux/digest/sha1.so sha1init.o sha1ossl.o -L. -L../../.. -L.  -rdynamic -Wl,-export-dynamic   -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lcrypto  -lpthread -lrt -ldl -lcrypt -lm   -lc
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/digest/sha1'
+compiling digest/sha2
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/digest/sha2'
+gcc -I. -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/digest/sha2 -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o sha2init.o -c sha2init.c
+gcc -I. -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/digest/sha2 -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o sha2ossl.o -c sha2ossl.c
+cp ../../.././ext/digest/sha2/lib/sha2.rb ../../../.ext/common/digest
+sha2init.c:19:5: warning: cast between incompatible function types from ‘int (*)(SHA256_CTX *)’ {aka ‘int (*)(struct SHA256state_st *)’} to ‘void (*)(void *)’ [-Wcast-function-type]
+     (rb_digest_hash_init_func_t)SHA##bitlen##_Init, \
+     ^
+sha2init.c:11:30: note: in expansion of macro ‘DEFINE_ALGO_METADATA’
+ #define FOREACH_BITLEN(func) func(256) func(384) func(512)
+                              ^~~~
+sha2init.c:24:1: note: in expansion of macro ‘FOREACH_BITLEN’
+ FOREACH_BITLEN(DEFINE_ALGO_METADATA)
+ ^~~~~~~~~~~~~~
+sha2init.c:20:5: warning: cast between incompatible function types from ‘int (*)(SHA256_CTX *, const void *, size_t)’ {aka ‘int (*)(struct SHA256state_st *, const void *, long unsigned int)’} to ‘void (*)(void *, unsigned char *, size_t)’ {aka ‘void (*)(void *, unsigned char *, long unsigned int)’} [-Wcast-function-type]
+     (rb_digest_hash_update_func_t)SHA##bitlen##_Update, \
+     ^
+sha2init.c:11:30: note: in expansion of macro ‘DEFINE_ALGO_METADATA’
+ #define FOREACH_BITLEN(func) func(256) func(384) func(512)
+                              ^~~~
+sha2init.c:24:1: note: in expansion of macro ‘FOREACH_BITLEN’
+ FOREACH_BITLEN(DEFINE_ALGO_METADATA)
+ ^~~~~~~~~~~~~~
+sha2init.c:19:5: warning: cast between incompatible function types from ‘int (*)(SHA512_CTX *)’ {aka ‘int (*)(struct SHA512state_st *)’} to ‘void (*)(void *)’ [-Wcast-function-type]
+     (rb_digest_hash_init_func_t)SHA##bitlen##_Init, \
+     ^
+sha2init.c:11:40: note: in expansion of macro ‘DEFINE_ALGO_METADATA’
+ #define FOREACH_BITLEN(func) func(256) func(384) func(512)
+                                        ^~~~
+sha2init.c:24:1: note: in expansion of macro ‘FOREACH_BITLEN’
+ FOREACH_BITLEN(DEFINE_ALGO_METADATA)
+ ^~~~~~~~~~~~~~
+sha2init.c:20:5: warning: cast between incompatible function types from ‘int (*)(SHA512_CTX *, const void *, size_t)’ {aka ‘int (*)(struct SHA512state_st *, const void *, long unsigned int)’} to ‘void (*)(void *, unsigned char *, size_t)’ {aka ‘void (*)(void *, unsigned char *, long unsigned int)’} [-Wcast-function-type]
+     (rb_digest_hash_update_func_t)SHA##bitlen##_Update, \
+     ^
+sha2init.c:11:40: note: in expansion of macro ‘DEFINE_ALGO_METADATA’
+ #define FOREACH_BITLEN(func) func(256) func(384) func(512)
+                                        ^~~~
+sha2init.c:24:1: note: in expansion of macro ‘FOREACH_BITLEN’
+ FOREACH_BITLEN(DEFINE_ALGO_METADATA)
+ ^~~~~~~~~~~~~~
+sha2init.c:19:5: warning: cast between incompatible function types from ‘int (*)(SHA512_CTX *)’ {aka ‘int (*)(struct SHA512state_st *)’} to ‘void (*)(void *)’ [-Wcast-function-type]
+     (rb_digest_hash_init_func_t)SHA##bitlen##_Init, \
+     ^
+sha2init.c:11:50: note: in expansion of macro ‘DEFINE_ALGO_METADATA’
+ #define FOREACH_BITLEN(func) func(256) func(384) func(512)
+                                                  ^~~~
+sha2init.c:24:1: note: in expansion of macro ‘FOREACH_BITLEN’
+ FOREACH_BITLEN(DEFINE_ALGO_METADATA)
+ ^~~~~~~~~~~~~~
+sha2init.c:20:5: warning: cast between incompatible function types from ‘int (*)(SHA512_CTX *, const void *, size_t)’ {aka ‘int (*)(struct SHA512state_st *, const void *, long unsigned int)’} to ‘void (*)(void *, unsigned char *, size_t)’ {aka ‘void (*)(void *, unsigned char *, long unsigned int)’} [-Wcast-function-type]
+     (rb_digest_hash_update_func_t)SHA##bitlen##_Update, \
+     ^
+sha2init.c:11:50: note: in expansion of macro ‘DEFINE_ALGO_METADATA’
+ #define FOREACH_BITLEN(func) func(256) func(384) func(512)
+                                                  ^~~~
+sha2init.c:24:1: note: in expansion of macro ‘FOREACH_BITLEN’
+ FOREACH_BITLEN(DEFINE_ALGO_METADATA)
+ ^~~~~~~~~~~~~~
+gcc -shared -o ../../../.ext/x86_64-linux/digest/sha2.so sha2init.o sha2ossl.o -L. -L../../.. -L.  -rdynamic -Wl,-export-dynamic   -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lcrypto  -lpthread -lrt -ldl -lcrypt -lm   -lc
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/digest/sha2'
+compiling dl
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/dl'
+gcc -I. -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/dl -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -fno-defer-pop -fno-omit-frame-pointer  -o cfunc.o -c cfunc.c
+gcc -I. -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/dl -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -fno-defer-pop -fno-omit-frame-pointer  -o handle.o -c handle.c
+gcc -I. -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/dl -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -fno-defer-pop -fno-omit-frame-pointer  -o cptr.o -c cptr.c
+gcc -I. -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/dl -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC -fno-defer-pop -fno-omit-frame-pointer  -o dl.o -c dl.c
+In file included from cptr.c:5:
+cptr.c: In function ‘rb_dlptr_cmp’:
+../.././include/ruby/ruby.h:223:48: warning: left shift of negative value [-Wshift-negative-value]
+ #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
+                                                ^~
+../.././include/ruby/ruby.h:956:21: note: in expansion of macro ‘INT2FIX’
+ # define INT2NUM(v) INT2FIX((int)(v))
+                     ^~~~~~~
+cptr.c:436:36: note: in expansion of macro ‘INT2NUM’
+     return diff > 0 ? INT2NUM(1) : INT2NUM(-1);
+                                    ^~~~~~~
+/bin/mkdir -p ../../.ext/common/dl
+cp ../.././ext/dl/lib/dl.rb ../../.ext/common
+cp ../.././ext/dl/lib/dl/types.rb ../../.ext/common/dl
+cp ../.././ext/dl/lib/dl/func.rb ../../.ext/common/dl
+cp ../.././ext/dl/lib/dl/struct.rb ../../.ext/common/dl
+cp ../.././ext/dl/lib/dl/callback.rb ../../.ext/common/dl
+cp ../.././ext/dl/lib/dl/stack.rb ../../.ext/common/dl
+cp ../.././ext/dl/lib/dl/cparser.rb ../../.ext/common/dl
+cp ../.././ext/dl/lib/dl/value.rb ../../.ext/common/dl
+cp ../.././ext/dl/lib/dl/pack.rb ../../.ext/common/dl
+cp ../.././ext/dl/lib/dl/import.rb ../../.ext/common/dl
+cp ../.././ext/dl/dl.h ../../.ext/include/ruby
+gcc -shared -o ../../.ext/x86_64-linux/dl.so cfunc.o handle.o cptr.o dl.o -L. -L../.. -L.  -rdynamic -Wl,-export-dynamic   -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -ldl  -lpthread -lrt -ldl -lcrypt -lm   -lc
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/dl'
+compiling dl/callback
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/dl/callback'
+/bin/mkdir -p ../../../.ext/x86_64-linux/dl
+generating callback.c
+gcc -I. -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/dl/callback -I../../.././ext/dl/callback/.. -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o callback.o -c callback.c
+gcc -I. -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/dl/callback -I../../.././ext/dl/callback/.. -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o callback-0.o -c callback-0.c
+gcc -I. -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/dl/callback -I../../.././ext/dl/callback/.. -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o callback-1.o -c callback-1.c
+gcc -I. -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/dl/callback -I../../.././ext/dl/callback/.. -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o callback-2.o -c callback-2.c
+gcc -I. -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/dl/callback -I../../.././ext/dl/callback/.. -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o callback-3.o -c callback-3.c
+gcc -I. -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/dl/callback -I../../.././ext/dl/callback/.. -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o callback-4.o -c callback-4.c
+gcc -I. -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/dl/callback -I../../.././ext/dl/callback/.. -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o callback-5.o -c callback-5.c
+gcc -I. -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/dl/callback -I../../.././ext/dl/callback/.. -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o callback-6.o -c callback-6.c
+gcc -I. -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/dl/callback -I../../.././ext/dl/callback/.. -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o callback-7.o -c callback-7.c
+gcc -I. -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/dl/callback -I../../.././ext/dl/callback/.. -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o callback-8.o -c callback-8.c
+gcc -shared -o ../../../.ext/x86_64-linux/dl/callback.so callback.o callback-0.o callback-1.o callback-2.o callback-3.o callback-4.o callback-5.o callback-6.o callback-7.o callback-8.o -L. -L../../.. -L.  -rdynamic -Wl,-export-dynamic   -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby  -lpthread -lrt -ldl -lcrypt -lm   -lc
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/dl/callback'
+compiling dl/win32
+compiling etc
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/etc'
+gcc -I. -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/etc -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o etc.o -c etc.c
+gcc -shared -o ../../.ext/x86_64-linux/etc.so etc.o -L. -L../.. -L.  -rdynamic -Wl,-export-dynamic   -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby  -lpthread -lrt -ldl -lcrypt -lm   -lc
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/etc'
+compiling fcntl
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/fcntl'
+gcc -I. -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/fcntl -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o fcntl.o -c fcntl.c
+gcc -shared -o ../../.ext/x86_64-linux/fcntl.so fcntl.o -L. -L../.. -L.  -rdynamic -Wl,-export-dynamic   -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby  -lpthread -lrt -ldl -lcrypt -lm   -lc
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/fcntl'
+compiling fiber
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/fiber'
+gcc -I. -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/fiber -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o fiber.o -c fiber.c
+gcc -shared -o ../../.ext/x86_64-linux/fiber.so fiber.o -L. -L../.. -L.  -rdynamic -Wl,-export-dynamic   -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby  -lpthread -lrt -ldl -lcrypt -lm   -lc
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/fiber'
+compiling fiddle
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/fiddle'
+gcc -I. -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/fiddle -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC   -o function.o -c function.c
+gcc -I. -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/fiddle -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC   -o closure.o -c closure.c
+gcc -I. -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/fiddle -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC   -o conversions.o -c conversions.c
+gcc -I. -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/fiddle -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC   -o fiddle.o -c fiddle.c
+/bin/mkdir -p ../../.ext/common/fiddle
+cp ../.././ext/fiddle/lib/fiddle/closure.rb ../../.ext/common/fiddle
+cp ../.././ext/fiddle/lib/fiddle/function.rb ../../.ext/common/fiddle
+cp ../.././ext/fiddle/lib/fiddle.rb ../../.ext/common
+gcc -shared -o ../../.ext/x86_64-linux/fiddle.so function.o closure.o conversions.o fiddle.o -L. -L../.. -L.  -rdynamic -Wl,-export-dynamic    -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby -lffi  -lffi  -lpthread -lrt -ldl -lcrypt -lm   -lc
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/fiddle'
+compiling gdbm
+compiling iconv
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/iconv'
+gcc -I. -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/iconv -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o iconv.o -c iconv.c
+gcc -shared -o ../../.ext/x86_64-linux/iconv.so iconv.o -L. -L../.. -L.  -rdynamic -Wl,-export-dynamic   -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby  -lpthread -lrt -ldl -lcrypt -lm   -lc
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/iconv'
+compiling io/nonblock
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/io/nonblock'
+/bin/mkdir -p ../../../.ext/x86_64-linux/io
+gcc -I. -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/io/nonblock -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o nonblock.o -c nonblock.c
+gcc -shared -o ../../../.ext/x86_64-linux/io/nonblock.so nonblock.o -L. -L../../.. -L.  -rdynamic -Wl,-export-dynamic   -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby  -lpthread -lrt -ldl -lcrypt -lm   -lc
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/io/nonblock'
+compiling io/wait
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/io/wait'
+gcc -I. -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/io/wait -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o wait.o -c wait.c
+wait.c: In function ‘io_wait’:
+wait.c:146:10: warning: cast between incompatible function types from ‘void (*)(rb_fdset_t *)’ {aka ‘void (*)(struct <anonymous> *)’} to ‘VALUE (*)(VALUE)’ {aka ‘long unsigned int (*)(long unsigned int)’} [-Wcast-function-type]
+          (VALUE (*)_((VALUE)))rb_fd_term, (VALUE)&arg.fds);
+          ^
+gcc -shared -o ../../../.ext/x86_64-linux/io/wait.so wait.o -L. -L../../.. -L.  -rdynamic -Wl,-export-dynamic   -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby  -lpthread -lrt -ldl -lcrypt -lm   -lc
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/io/wait'
+compiling json
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/json'
+/bin/mkdir -p ../../.ext/common/json
+/bin/mkdir -p ../../.ext/common/json/add
+cp ../.././ext/json/lib/json.rb ../../.ext/common
+cp ../.././ext/json/lib/json/version.rb ../../.ext/common/json
+cp ../.././ext/json/lib/json/editor.rb ../../.ext/common/json
+cp ../.././ext/json/lib/json/common.rb ../../.ext/common/json
+cp ../.././ext/json/lib/json/ext.rb ../../.ext/common/json
+cp ../.././ext/json/lib/json/add/rails.rb ../../.ext/common/json/add
+cp ../.././ext/json/lib/json/add/core.rb ../../.ext/common/json/add
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/json'
+compiling json/generator
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/json/generator'
+/bin/mkdir -p ../../../.ext/x86_64-linux/json/ext
+gcc -I. -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/json/generator -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o generator.o -c generator.c
+generator.c: In function ‘convert_UTF8_to_JSON_ASCII’:
+generator.c:145:41: warning: this statement may fall through [-Wimplicit-fallthrough=]
+             case 5: ch += *source++; ch <<= 6; /* remember, illegal UTF-8 */
+                                      ~~~^~~~~
+generator.c:146:13: note: here
+             case 4: ch += *source++; ch <<= 6; /* remember, illegal UTF-8 */
+             ^~~~
+generator.c:146:41: warning: this statement may fall through [-Wimplicit-fallthrough=]
+             case 4: ch += *source++; ch <<= 6; /* remember, illegal UTF-8 */
+                                      ~~~^~~~~
+generator.c:147:13: note: here
+             case 3: ch += *source++; ch <<= 6;
+             ^~~~
+generator.c:147:41: warning: this statement may fall through [-Wimplicit-fallthrough=]
+             case 3: ch += *source++; ch <<= 6;
+                                      ~~~^~~~~
+generator.c:148:13: note: here
+             case 2: ch += *source++; ch <<= 6;
+             ^~~~
+generator.c:148:41: warning: this statement may fall through [-Wimplicit-fallthrough=]
+             case 2: ch += *source++; ch <<= 6;
+                                      ~~~^~~~~
+generator.c:149:13: note: here
+             case 1: ch += *source++; ch <<= 6;
+             ^~~~
+generator.c:149:41: warning: this statement may fall through [-Wimplicit-fallthrough=]
+             case 1: ch += *source++; ch <<= 6;
+                                      ~~~^~~~~
+generator.c:150:13: note: here
+             case 0: ch += *source++;
+             ^~~~
+generator.c: In function ‘isLegalUTF8’:
+generator.c:83:46: warning: this statement may fall through [-Wimplicit-fallthrough=]
+         case 4: if ((a = (*--srcptr)) < 0x80 || a > 0xBF) return 0;
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+generator.c:84:9: note: here
+         case 3: if ((a = (*--srcptr)) < 0x80 || a > 0xBF) return 0;
+         ^~~~
+generator.c:84:46: warning: this statement may fall through [-Wimplicit-fallthrough=]
+         case 3: if ((a = (*--srcptr)) < 0x80 || a > 0xBF) return 0;
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+generator.c:85:9: note: here
+         case 2: if ((a = (*--srcptr)) > 0xBF) return 0;
+         ^~~~
+generator.c:87:21: warning: this statement may fall through [-Wimplicit-fallthrough=]
+                     switch (*source) {
+                     ^~~~~~
+generator.c:96:9: note: here
+         case 1: if (*source >= 0x80 && *source < 0xC2) return 0;
+         ^~~~
+gcc -shared -o ../../../.ext/x86_64-linux/json/ext/generator.so generator.o -L. -L../../.. -L.  -rdynamic -Wl,-export-dynamic   -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby  -lpthread -lrt -ldl -lcrypt -lm   -lc
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/json/generator'
+compiling json/parser
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/json/parser'
+gcc -I. -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/json/parser -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o parser.o -c parser.c
+parser.c: In function ‘cParser_parse’:
+parser.c:1721:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:1723:1: note: here
+ case 1:
+ ^~~~
+parser.c:1738:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:1740:1: note: here
+ case 2:
+ ^~~~
+parser.c:1747:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:1749:1: note: here
+ case 3:
+ ^~~~
+parser.c:1754:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:1756:1: note: here
+ case 4:
+ ^~~~
+parser.c:1763:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:1765:1: note: here
+ case 5:
+ ^~~~
+parser.rl:508:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+         char *np;
+     ^
+parser.rl:510:1: note: here
+         np = JSON_parse_array(json, fpc, pe, &result);
+ ^   
+parser.c:1801:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:1803:1: note: here
+ case 6:
+ ^~~~
+parser.c:1810:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:1812:1: note: here
+ case 7:
+ ^~~~
+parser.c:1817:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:1819:1: note: here
+ case 8:
+ ^~~~
+parser.c:1826:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:1828:1: note: here
+ case 9:
+ ^~~~
+parser.c: In function ‘JSON_parse_array’:
+parser.c:1068:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:1070:1: note: here
+ case 2:
+ ^~~~
+parser.rl:351:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ 
+     ^
+parser.rl:353:1: note: here
+ 
+ ^   
+parser.c:1121:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:1123:1: note: here
+ case 4:
+ ^~~~
+parser.c:1145:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:1147:1: note: here
+ case 5:
+ ^~~~
+parser.c:1154:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:1156:1: note: here
+ case 6:
+ ^~~~
+parser.c:1161:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:1163:1: note: here
+ case 7:
+ ^~~~
+parser.c:1170:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:1172:1: note: here
+ case 8:
+ ^~~~
+parser.c:1177:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:1179:1: note: here
+ case 9:
+ ^~~~
+parser.c:1186:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:1188:1: note: here
+ case 10:
+ ^~~~
+parser.c:1193:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:1195:1: note: here
+ case 11:
+ ^~~~
+parser.c:1202:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:1204:1: note: here
+ case 12:
+ ^~~~
+parser.c:1219:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:1221:1: note: here
+ case 13:
+ ^~~~
+parser.c:1228:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:1230:1: note: here
+ case 14:
+ ^~~~
+parser.c:1235:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:1237:1: note: here
+ case 15:
+ ^~~~
+parser.c:1244:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:1246:1: note: here
+ case 16:
+ ^~~~
+parser.c: In function ‘JSON_parse_value’:
+parser.rl:194:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+             *result = CNaN;
+     ^
+parser.rl:196:1: note: here
+             rb_raise(eParserError, "%u: unexpected token at '%s'", __LINE__, p - 2);
+ ^   
+parser.c:598:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:600:1: note: here
+ case 2:
+ ^~~~
+parser.c:605:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:607:1: note: here
+ case 3:
+ ^~~~
+parser.c:612:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:614:1: note: here
+ case 4:
+ ^~~~
+parser.c:619:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:621:1: note: here
+ case 5:
+ ^~~~
+parser.c:626:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:628:1: note: here
+ case 6:
+ ^~~~
+parser.c:633:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:635:1: note: here
+ case 7:
+ ^~~~
+parser.c:640:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:642:1: note: here
+ case 8:
+ ^~~~
+parser.c:647:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:649:1: note: here
+ case 9:
+ ^~~~
+parser.c:654:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:656:1: note: here
+ case 10:
+ ^~~~
+parser.c:661:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:663:1: note: here
+ case 11:
+ ^~~~
+parser.c:668:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:670:1: note: here
+ case 12:
+ ^~~~
+parser.c:675:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:677:1: note: here
+ case 13:
+ ^~~~
+parser.c:682:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:684:1: note: here
+ case 14:
+ ^~~~
+parser.c:689:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:691:1: note: here
+ case 15:
+ ^~~~
+parser.c:696:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:698:1: note: here
+ case 16:
+ ^~~~
+parser.c:703:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:705:1: note: here
+ case 17:
+ ^~~~
+parser.c:710:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:712:1: note: here
+ case 18:
+ ^~~~
+parser.c:717:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:719:1: note: here
+ case 19:
+ ^~~~
+parser.c:724:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:726:1: note: here
+ case 20:
+ ^~~~
+parser.c: In function ‘JSON_parse_string’:
+parser.c:1392:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:1394:1: note: here
+ case 2:
+ ^~~~
+parser.c:1424:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:1426:1: note: here
+ case 3:
+ ^~~~
+parser.c:1433:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:1435:1: note: here
+ case 4:
+ ^~~~
+parser.c:1446:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:1448:1: note: here
+ case 5:
+ ^~~~
+parser.c:1459:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:1461:1: note: here
+ case 6:
+ ^~~~
+parser.c:1472:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:1474:1: note: here
+ case 7:
+ ^~~~
+parser.c: In function ‘JSON_parse_float’:
+parser.c:904:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:906:1: note: here
+ case 2:
+ ^~~~
+parser.c:913:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:915:1: note: here
+ case 3:
+ ^~~~
+parser.c:923:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:925:1: note: here
+ case 4:
+ ^~~~
+parser.c:930:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:932:1: note: here
+ case 5:
+ ^~~~
+parser.c:954:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:956:1: note: here
+ case 6:
+ ^~~~
+parser.c:965:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:967:1: note: here
+ case 7:
+ ^~~~
+parser.c:972:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:974:1: note: here
+ case 8:
+ ^~~~
+parser.c:986:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:988:1: note: here
+ case 9:
+ ^~~~
+parser.c: In function ‘JSON_parse_integer’:
+parser.c:808:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:810:1: note: here
+ case 2:
+ ^~~~
+parser.c:817:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:819:1: note: here
+ case 3:
+ ^~~~
+parser.c:834:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:836:1: note: here
+ case 4:
+ ^~~~
+parser.c: In function ‘JSON_parse_object’:
+parser.c:134:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:136:1: note: here
+ case 2:
+ ^~~~
+parser.rl:136:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ 
+     ^
+parser.rl:138:1: note: here
+         ignore* name_separator ignore*
+ ^   
+parser.c:172:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:174:1: note: here
+ case 4:
+ ^~~~
+parser.c:181:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:183:1: note: here
+ case 5:
+ ^~~~
+parser.c:188:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:190:1: note: here
+ case 6:
+ ^~~~
+parser.c:197:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:199:1: note: here
+ case 7:
+ ^~~~
+parser.c:204:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:206:1: note: here
+ case 8:
+ ^~~~
+parser.rl:128:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+         char *np;
+     ^
+parser.rl:130:1: note: here
+         np = JSON_parse_string(json, fpc, pe, &last_name);
+ ^   
+parser.c:256:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:258:1: note: here
+ case 10:
+ ^~~~
+parser.c:269:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:271:1: note: here
+ case 11:
+ ^~~~
+parser.c:278:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:280:1: note: here
+ case 12:
+ ^~~~
+parser.c:285:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:287:1: note: here
+ case 13:
+ ^~~~
+parser.c:294:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:296:1: note: here
+ case 14:
+ ^~~~
+parser.c:301:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:303:1: note: here
+ case 15:
+ ^~~~
+parser.c:310:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:312:1: note: here
+ case 16:
+ ^~~~
+parser.c:317:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:319:1: note: here
+ case 17:
+ ^~~~
+parser.c:326:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:328:1: note: here
+ case 18:
+ ^~~~
+parser.c:343:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:345:1: note: here
+ case 19:
+ ^~~~
+parser.c:352:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:354:1: note: here
+ case 20:
+ ^~~~
+parser.c:359:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:361:1: note: here
+ case 21:
+ ^~~~
+parser.c:368:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:370:1: note: here
+ case 22:
+ ^~~~
+parser.c:375:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:377:1: note: here
+ case 23:
+ ^~~~
+parser.c:384:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:386:1: note: here
+ case 24:
+ ^~~~
+parser.c:391:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:393:1: note: here
+ case 25:
+ ^~~~
+parser.c:400:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if ( ++p == pe )
+     ^
+parser.c:402:1: note: here
+ case 26:
+ ^~~~
+gcc -shared -o ../../../.ext/x86_64-linux/json/ext/parser.so parser.o -L. -L../../.. -L.  -rdynamic -Wl,-export-dynamic   -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby  -lpthread -lrt -ldl -lcrypt -lm   -lc
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/json/parser'
+compiling mathn/complex
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/mathn/complex'
+/bin/mkdir -p ../../../.ext/x86_64-linux/mathn
+gcc -I. -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/mathn/complex -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o complex.o -c complex.c
+gcc -shared -o ../../../.ext/x86_64-linux/mathn/complex.so complex.o -L. -L../../.. -L.  -rdynamic -Wl,-export-dynamic   -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby  -lpthread -lrt -ldl -lcrypt -lm   -lc
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/mathn/complex'
+compiling mathn/rational
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/mathn/rational'
+gcc -I. -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/mathn/rational -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o rational.o -c rational.c
+gcc -shared -o ../../../.ext/x86_64-linux/mathn/rational.so rational.o -L. -L../../.. -L.  -rdynamic -Wl,-export-dynamic   -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby  -lpthread -lrt -ldl -lcrypt -lm   -lc
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/mathn/rational'
+compiling nkf
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/nkf'
+gcc -I. -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/nkf -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o nkf.o -c nkf.c
+cp ../.././ext/nkf/lib/kconv.rb ../../.ext/common
+In file included from nkf.c:62:
+nkf-utf8/nkf.c: In function ‘options’:
+nkf-utf8/nkf.c:6332:22: warning: this statement may fall through [-Wimplicit-fallthrough=]
+      fold_preserve_f = TRUE;
+nkf-utf8/nkf.c:6333:2: note: here
+  case 'f':   /* folding -f60 or -f */
+  ^~~~
+In file included from nkf.c:62:
+nkf-utf8/nkf.c: In function ‘set_input_encoding’:
+nkf-utf8/nkf.c:1214:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  if (x0201_f == NKF_UNSPECIFIED) x0201_f = FALSE; /* -x specified implicitly */
+     ^
+nkf-utf8/nkf.c:1215:5: note: here
+     case CP50220:
+     ^~~~
+gcc -shared -o ../../.ext/x86_64-linux/nkf.so nkf.o -L. -L../.. -L.  -rdynamic -Wl,-export-dynamic   -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby  -lpthread -lrt -ldl -lcrypt -lm   -lc
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/nkf'
+compiling objspace
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/objspace'
+gcc -I. -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/objspace -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  -o objspace.o -c objspace.c
+gcc -shared -o ../../.ext/x86_64-linux/objspace.so objspace.o -L. -L../.. -L.  -rdynamic -Wl,-export-dynamic   -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p330/lib -lruby  -lpthread -lrt -ldl -lcrypt -lm   -lc
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/objspace'
+compiling openssl
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: Entering directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/openssl'
+gcc -I. -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC   -o ossl_bio.o -c ossl_bio.c
+gcc -I. -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC   -o ossl_pkcs12.o -c ossl_pkcs12.c
+gcc -I. -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC   -o ossl_config.o -c ossl_config.c
+gcc -I. -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl -DRUBY_EXTCONF_H=\"extconf.h\"    -fPIC -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC   -o ossl_ssl_session.o -c ossl_ssl_session.c
+In file included from ossl.h:56,
+                 from ossl_bio.c:11:
+/usr/include/openssl/asn1_mac.h:10:2: error: #error "This file is obsolete; please update your software."
+ #error "This file is obsolete; please update your software."
+  ^~~~~
+In file included from ossl.h:56,
+                 from ossl_config.c:11:
+/usr/include/openssl/asn1_mac.h:10:2: error: #error "This file is obsolete; please update your software."
+ #error "This file is obsolete; please update your software."
+  ^~~~~
+In file included from ossl.h:56,
+                 from ossl_ssl_session.c:5:
+/usr/include/openssl/asn1_mac.h:10:2: error: #error "This file is obsolete; please update your software."
+ #error "This file is obsolete; please update your software."
+  ^~~~~
+In file included from ossl.h:56,
+                 from ossl_pkcs12.c:6:
+/usr/include/openssl/asn1_mac.h:10:2: error: #error "This file is obsolete; please update your software."
+ #error "This file is obsolete; please update your software."
+  ^~~~~
+In file included from ossl.h:204,
+                 from ossl_config.c:11:
+openssl_missing.h:79:35: error: macro "EVP_MD_CTX_create" passed 1 arguments, but takes just 0
+ EVP_MD_CTX *EVP_MD_CTX_create(void);
+                                   ^
+In file included from ossl.h:204,
+                 from ossl_bio.c:11:
+openssl_missing.h:79:35: error: macro "EVP_MD_CTX_create" passed 1 arguments, but takes just 0
+ EVP_MD_CTX *EVP_MD_CTX_create(void);
+                                   ^
+In file included from /usr/include/openssl/x509.h:18,
+                 from /usr/include/openssl/x509v3.h:14,
+                 from ossl.h:57,
+                 from ossl_config.c:11:
+openssl_missing.h:83:6: error: expected declaration specifiers or ‘...’ before ‘(’ token
+ void EVP_MD_CTX_init(EVP_MD_CTX *ctx);
+      ^~~~~~~~~~~~~~~
+In file included from /usr/include/openssl/x509.h:18,
+                 from /usr/include/openssl/x509v3.h:14,
+                 from ossl.h:57,
+                 from ossl_bio.c:11:
+openssl_missing.h:83:6: error: expected declaration specifiers or ‘...’ before ‘(’ token
+ void EVP_MD_CTX_init(EVP_MD_CTX *ctx);
+      ^~~~~~~~~~~~~~~
+openssl_missing.h:91:6: error: expected declaration specifiers or ‘...’ before ‘(’ token
+ void EVP_MD_CTX_destroy(EVP_MD_CTX *ctx);
+      ^~~~~~~~~~~~~~~~~~
+openssl_missing.h:91:6: error: expected declaration specifiers or ‘...’ before ‘(’ token
+ void EVP_MD_CTX_destroy(EVP_MD_CTX *ctx);
+      ^~~~~~~~~~~~~~~~~~
+In file included from ossl.h:204,
+                 from ossl_ssl_session.c:5:
+openssl_missing.h:79:35: error: macro "EVP_MD_CTX_create" passed 1 arguments, but takes just 0
+ EVP_MD_CTX *EVP_MD_CTX_create(void);
+                                   ^
+In file included from ossl.h:204,
+                 from ossl_pkcs12.c:6:
+openssl_missing.h:79:35: error: macro "EVP_MD_CTX_create" passed 1 arguments, but takes just 0
+ EVP_MD_CTX *EVP_MD_CTX_create(void);
+                                   ^
+In file included from /usr/include/openssl/x509.h:18,
+                 from /usr/include/openssl/x509v3.h:14,
+                 from ossl.h:57,
+                 from ossl_ssl_session.c:5:
+openssl_missing.h:83:6: error: expected declaration specifiers or ‘...’ before ‘(’ token
+ void EVP_MD_CTX_init(EVP_MD_CTX *ctx);
+      ^~~~~~~~~~~~~~~
+In file included from /usr/include/openssl/x509.h:18,
+                 from /usr/include/openssl/x509v3.h:14,
+                 from ossl.h:57,
+                 from ossl_pkcs12.c:6:
+openssl_missing.h:83:6: error: expected declaration specifiers or ‘...’ before ‘(’ token
+ void EVP_MD_CTX_init(EVP_MD_CTX *ctx);
+      ^~~~~~~~~~~~~~~
+openssl_missing.h:91:6: error: expected declaration specifiers or ‘...’ before ‘(’ token
+ void EVP_MD_CTX_destroy(EVP_MD_CTX *ctx);
+      ^~~~~~~~~~~~~~~~~~
+openssl_missing.h:91:6: error: expected declaration specifiers or ‘...’ before ‘(’ token
+ void EVP_MD_CTX_destroy(EVP_MD_CTX *ctx);
+      ^~~~~~~~~~~~~~~~~~
+ossl_ssl_session.c: In function ‘SSL_SESSION_cmp’:
+ossl_ssl_session.c:78:10: error: dereferencing pointer to incomplete type ‘SSL_SESSION’ {aka ‘const struct ssl_session_st’}
+     if (a->ssl_version != b->ssl_version ||
+          ^~
+ossl_pkcs12.c: In function ‘ossl_pkcs12_initialize’:
+ossl_pkcs12.c:152:23: warning: cast between incompatible function types from ‘VALUE (*)(EVP_PKEY *)’ {aka ‘long unsigned int (*)(struct evp_pkey_st *)’} to ‘VALUE (*)(VALUE)’ {aka ‘long unsigned int (*)(long unsigned int)’} [-Wcast-function-type]
+     pkey = rb_protect((VALUE(*)_((VALUE)))ossl_pkey_new, (VALUE)key,
+                       ^
+ossl_pkcs12.c:155:23: warning: cast between incompatible function types from ‘VALUE (*)(X509 *)’ {aka ‘long unsigned int (*)(struct x509_st *)’} to ‘VALUE (*)(VALUE)’ {aka ‘long unsigned int (*)(long unsigned int)’} [-Wcast-function-type]
+     cert = rb_protect((VALUE(*)_((VALUE)))ossl_x509_new, (VALUE)x509, &st);
+                       ^
+ossl_pkcs12.c:159:17: warning: cast between incompatible function types from ‘VALUE (*)(struct stack_st_X509 *)’ {aka ‘long unsigned int (*)(struct stack_st_X509 *)’} to ‘VALUE (*)(VALUE)’ {aka ‘long unsigned int (*)(long unsigned int)’} [-Wcast-function-type]
+      rb_protect((VALUE(*)_((VALUE)))ossl_x509_sk2ary, (VALUE)x509s, &st);
+                 ^
+ossl_ssl_session.c: In function ‘ossl_ssl_session_to_der’:
+ossl_ssl_session.c:227:15: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+  else if (len >= sizeof(buf))
+               ^~
+ossl_bio.c: In function ‘ossl_protect_obj2bio’:
+ossl_bio.c:53:29: warning: cast between incompatible function types from ‘BIO * (*)(VALUE)’ {aka ‘struct bio_st * (*)(long unsigned int)’} to ‘VALUE (*)(VALUE)’ {aka ‘long unsigned int (*)(long unsigned int)’} [-Wcast-function-type]
+      ret = (BIO*)rb_protect((VALUE(*)_((VALUE)))ossl_obj2bio, obj, status);
+                             ^
+ossl_bio.c: In function ‘ossl_protect_membio2str’:
+ossl_bio.c:72:23: warning: cast between incompatible function types from ‘VALUE (*)(BIO *)’ {aka ‘long unsigned int (*)(struct bio_st *)’} to ‘VALUE (*)(VALUE)’ {aka ‘long unsigned int (*)(long unsigned int)’} [-Wcast-function-type]
+     return rb_protect((VALUE(*)_((VALUE)))ossl_membio2str0, (VALUE)bio, status);
+                       ^
+make[1]: *** [Makefile:245: ossl_pkcs12.o] Error 1
+make[1]: *** Waiting for unfinished jobs....
+make[1]: *** [Makefile:245: ossl_bio.o] Error 1
+make[1]: *** [Makefile:245: ossl_ssl_session.o] Error 1
+make[1]: *** [Makefile:245: ossl_config.o] Error 1
+make[1]: Leaving directory '/usr/local/rvm/src/ruby-1.9.2-p330/ext/openssl'
+make: *** [uncommon.mk:137: mkmain.sh] Error 1
+++ return 2

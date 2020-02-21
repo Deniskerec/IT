@@ -1,0 +1,8 @@
+FTP -> standars for "File Transfer Protocol"
+
+FTP is used to transfer computer files.. 
+
+Essentially it transfers these web page files to the computer server so others can access them. FTP can also be used to download files or programs from the Internet to your computer
+
+
+
