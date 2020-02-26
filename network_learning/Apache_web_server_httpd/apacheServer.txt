@@ -1,0 +1,19 @@
+So what happens every time someone browses the Web? When a usere executes his browser and tipes www.google.com, for example, the browser queries the Doman Name System (DNS) about the Internet Protocol (IP) address of the compter: www.google.com. Once the browser gets the answer from the DNS server, it esablishes a Transmission Control PRotocol (TcP) connection using port 80 and requests the dafault web page. The server will send the page tot the brower in HTML format, and this is was the user will see. 
+
+
+Installing the Apache server -> Web server.
+
+dnf clean all
+dnf update -y
+dnf install httpd
+systemctl start httpd 
+systemctl status httpd 
+systemctl enable httpd
+
+
+As the firewall will be filterin out the traffic, we have to add a rule to permit http traffic ( port 80) 
+firewall-cmd --add-port=80/tcp
+
+NAME RESOLUTION 
+
+

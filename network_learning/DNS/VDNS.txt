@@ -1,0 +1,8 @@
+It is easier to reffer to computers using names insted of IP addresses. A local DNS(domain name system)server will allow us to establich a direct relationship between the computer nameand an IP address, which, in turn will make it muuch easier to indetify, as many others serveices depend on it to work properly.
+
+
+
+easy to hack, need to pay attention when configuring the service
+
+
+

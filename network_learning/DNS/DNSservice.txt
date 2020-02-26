@@ -1,0 +1,76 @@
+A DNS server  translates names into IP addresses. 
+
+In order to commuicate with one another ( DNS with IP), every computer in the network must be assigned a unique IP address.
+
+A DNS server is a machine that keeps a list of associated names-IP addresses. In the early days of the Internet, this was achived with a single text file that all computers ha to know in order to comminicate wit one another. This file is /etc/hosts
+
+
+INSTALLIN a DNS Server
+
+
+dnf -y install bind
+
+
+systemctl status baned, 
+
+expected output -> ● named.service - Berkeley Internet Name Domain (DNS)
+   Loaded: loaded (/usr/lib/systemd/system/named.service; disabled; vendor preset: disabled)
+   Active: inactive (dead)
+
+
+We need to start the service 
+
+
+systemctl start named
+
+systemctl status named. 
+
+
+__________________________________________________________
+
+DNF server types.
+
+Cache only server -> In this case, the server doesnt' hold any information about the associated name-IP addresses, so it has to query to another server. But onece it gets an answer, it keeps it in the cache, so that when another cient performs the same query, it can respond quickly, without fowarding the request to another server. 
+
+Master server -> This is a server that holds a copy of the names and IP addresses of the computers belonging to the domain in what is called a zone. A mster server has the authority to change an IP associated with a certain name, as well as to add or delete new registers.
+
+Slave server This type of server hols a copy of the zone too but it's read only. The slave server has all the information it needs to answer queries but cannot change, add or delete any registers. 
+
+We always need a master server  to add, update, delete DNS entires, but one also need at least a slave server, so that a workload can e distributed. Besides, if the master server crashes or gets hacked, one can replace it with a slave server. 
+
+_________________________________________________________
+
+CONFIGURATION
+
+The main configuration file of the DNS server is in named. conff.
+1.
+listen-on port 53 { 127.0.0.1; };
+listen-on-v6 port 53 { ::1; };
+
+change this to 
+2.
+listen-on port 53 { 192.168.1.15; };
+listen-on-v6 port 53 { fe80::a00:27ff:feac:da50; };
+
+What this does ?
+in 1. the server will listen only in the local host address, that's it, it won't be accessible fron other computers on the network. As we want to be able to query the DNS server from other computers, we need to change those 2 lines (2.). This way, we tell the server to listen on the interace with the IPv4 address 192.168.1.15.,that is, the IP connected to the same local area network(LAN) as te DNS client. We could have used the keyword any, and the name server would listen in all of its interfaces, but is safer to lsiten only in the interface the cluents will connect to.
+
+directory var/named -> this means that the default direcotry for the tone files will be in /vat/named. 
+
+allow-query localhost -> we want the server to answer queries from any computer in our network, so we change this value accordingly 
+->allow-query
+{ 192.168.1.0/24; fe80::/64; };
+We could have used the word any to allow queries from any device independently
+of its IP address, but there are a couple of drawbacks to this approach. First, our servers
+could be overloaded by requests from devices outside of our network. Second, we could
+be allowing a malicious user to get information from the DNS.
+
+zone {....
+...
+..
+}
+
+This is the only zone defined in the configuration file - the topmost zone in the hierarxhy. If we open the /var/named/named.ca file, we will see that it contains the address of the root server on the Internet. Here, we will have to tell the sever about our 
+
+
+Will e continued !!!!!
