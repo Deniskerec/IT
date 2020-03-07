@@ -15,3 +15,6 @@ I also had to add Incoming filtering (because the firewall on my modem blocks al
 ICMP -> ssh
 TCP or UDP -> so some traffic ?? dont know exactly what this is but i gave it a range from 1:65535
 
+
+You need to open ports left side is what you use, right side is what you target on my modem... NAT callback is immportanto
+
